@@ -36,6 +36,14 @@ const resolvedCanonical = canonicalUrl ?? Astro.url.href;
     />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-vFmUYIIs-tx_YTj5Cf9Uy.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)};
+      window.plausible.init=window.plausible.init||function(i){window.plausible.o=i||{}};
+      window.plausible.init();
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
