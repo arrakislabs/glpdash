@@ -87,23 +87,13 @@ export default function DoseScheduleCalculator() {
   const descriptions = stepDescriptions[drugId] ?? [];
 
   return (
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "360px 1fr",
-      gap: 32,
-      paddingTop: 48,
-      alignItems: "start",
-    }}
-    className="dose-calc-responsive"
-    >
+    <div className="dose-calc-grid">
       {/* Inputs */}
-      <aside style={{
+      <aside className="calc-inputs" style={{
         background: PAPER,
         border: `1px solid ${RULE}`,
         borderRadius: 10,
         padding: 28,
-        position: "sticky",
-        top: 88,
       }}>
         <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 20, marginBottom: 6, color: INK }}>
           Your starting point
@@ -481,9 +471,6 @@ export default function DoseScheduleCalculator() {
 
       <style>{`
         @media (max-width: 980px) {
-          .dose-calc-responsive {
-            grid-template-columns: 1fr !important;
-          }
           .step-responsive {
             grid-template-columns: 1fr 1fr !important;
             gap: 16px !important;

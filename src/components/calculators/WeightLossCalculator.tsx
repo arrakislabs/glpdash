@@ -101,23 +101,13 @@ export default function WeightLossCalculator() {
   const goalWeek = projection.estimatedGoalWeek;
 
   return (
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "380px 1fr",
-      gap: 32,
-      paddingTop: 48,
-      alignItems: "start",
-    }}
-    className="calc-responsive"
-    >
+    <div className="calc-grid">
       {/* Inputs */}
-      <aside style={{
+      <aside className="calc-inputs" style={{
         background: PAPER,
         border: `1px solid ${RULE}`,
         borderRadius: 10,
         padding: 28,
-        position: "sticky",
-        top: 88,
       }}>
         <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 20, marginBottom: 6, color: INK }}>
           Your numbers
@@ -396,18 +386,6 @@ export default function WeightLossCalculator() {
         <AffiliateDisclosure />
       </div>
 
-      <style>{`
-        @media (max-width: 980px) {
-          .calc-responsive {
-            grid-template-columns: 1fr !important;
-          }
-        }
-        @media (max-width: 640px) {
-          .milestone-grid {
-            grid-template-columns: 1fr 1fr !important;
-          }
-        }
-      `}</style>
     </div>
   );
 }
