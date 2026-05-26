@@ -5,99 +5,291 @@ import Footer from "../components/layout/Footer.astro";
 ---
 
 <BaseLayout
-  title="Privacy Policy | GLPDash"
-  description="GLPDash does not collect, store, or transmit your health data. All calculator inputs stay in your browser. Read our full privacy policy."
+  title="Privacy — GLP Index"
+  description="GLP Index does not collect, store, or transmit your health data. All calculator inputs stay in your browser."
 >
   <Header />
 
-  <main class="max-w-3xl mx-auto px-4 py-12">
-    <nav class="flex items-center gap-2 text-xs text-[#94A3B8] mb-8">
-      <a href="/" class="hover:text-[#F8FAFC] transition-colors">Home</a>
-      <span>/</span>
-      <span class="text-[#F8FAFC]">Privacy</span>
-    </nav>
-
-    <h1 class="text-3xl font-bold text-[#F8FAFC] mb-3">Privacy Policy</h1>
-    <p class="text-sm text-[#94A3B8] mb-10">Last updated: May 2026</p>
-
-    <div class="space-y-10 text-[#94A3B8] leading-relaxed">
-      <section class="p-5 rounded-2xl bg-[#10B981]/5 border border-[#10B981]/20">
-        <p class="text-[#F8FAFC] font-semibold">The short version</p>
-        <p class="mt-2 text-sm">
-          Your health data never leaves your device. All calculations happen in your browser. We don't have a database of user health records because we don't collect any.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Calculator data</h2>
-        <p>
-          When you use our calculators, the data you enter (weight, height, goals, medication) is processed entirely in your browser using JavaScript. It is never sent to our servers or any third-party service.
-        </p>
-        <p class="mt-3">
-          We do not have servers that receive or store your health information. There is no user account system, no database of health records, and no way for us to retrieve data you entered.
-        </p>
-        <p class="mt-3">
-          The only data stored in your browser is a single preference flag (whether you have dismissed the disclaimer banner), which contains no health information.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Analytics</h2>
-        <p>
-          We use <strong class="text-[#F8FAFC]">Plausible Analytics</strong> to understand how many people visit GLPDash and which pages are popular. Plausible is a privacy-preserving analytics service that:
-        </p>
-        <ul class="mt-3 space-y-2">
-          {[
-            "Does not use cookies",
-            "Does not collect or store personal data",
-            "Does not use fingerprinting or cross-site tracking",
-            "Is compliant with GDPR, CCPA, and PECR without requiring consent banners",
-            "Does not send data to Google, Facebook, or any advertising network",
-          ].map((item) => (
-            <li class="flex gap-3 text-sm">
-              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-[#10B981] mt-1.5" />
-              {item}
-            </li>
-          ))}
-        </ul>
-        <p class="mt-3 text-sm">
-          The data Plausible collects (aggregate page views, referrer sources, approximate country) is not linked to individuals and cannot identify you.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Advertising</h2>
-        <p>
-          GLPDash does not run advertising networks, advertising trackers, or retargeting pixels. We do not use Google Ads, Meta Pixel, TikTok Pixel, or similar services.
-        </p>
-        <p class="mt-3">
-          GLPDash does not currently have affiliate partnerships. When affiliate links are added in the future, they will be clearly disclosed and will not involve third-party tracking code running on our pages.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Third-party links</h2>
-        <p>
-          Our affiliate partner links (Ro Health, Hims/Hers) take you to third-party websites. Once you leave GLPDash, those websites' own privacy policies apply. We encourage you to review their privacy policies before providing any personal information.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Hosting</h2>
-        <p>
-          GLPDash is hosted on Cloudflare Pages. Cloudflare may collect server-side logs (IP addresses, request timestamps) as part of standard web infrastructure operation. These logs are retained and governed by Cloudflare's privacy policy.
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Contact</h2>
-        <p>
-          If you have questions about this privacy policy, you can reach us at{" "}
-          <a href="mailto:hello@glpdash.com" class="text-[#10B981] hover:underline">hello@glpdash.com</a>.
-        </p>
-      </section>
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">GLP Index</a>
+        <span class="sep">/</span>
+        <span class="now">Privacy</span>
+      </div>
+      <h1 class="serif" style="font-weight:500;font-size:clamp(40px,5vw,60px);max-width:20ch">
+        Your weight isn't sent anywhere — <em>not even to us.</em>
+      </h1>
+      <p class="deck" style="margin-top:18px;font-size:18px;max-width:58ch">
+        The short version of our privacy story, in language that means what it says. The longer legal version is below, side&#8209;by&#8209;side with the plain&#8209;English one.
+      </p>
+      <p style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#6B655C;letter-spacing:.08em;margin-top:14px">
+        Last updated · May 2026
+      </p>
     </div>
-  </main>
+  </section>
+
+  <div class="wrap">
+    <!-- Three promises -->
+    <div class="promises">
+      <div class="promise">
+        <div class="promise-num">Promise 01</div>
+        <h3 class="serif">We <em>can't</em> see what you typed.</h3>
+        <p>Every calculator runs entirely inside your browser tab. There's no server receiving your inputs. There's no database of user health records — because there's no database.</p>
+      </div>
+      <div class="promise">
+        <div class="promise-num">Promise 02</div>
+        <h3 class="serif">No accounts. No cookies. No tracking.</h3>
+        <p>We don't run advertising pixels, fingerprinting, or retargeting. No Google Ads. No Meta Pixel. No TikTok Pixel. The site has nothing to sell you that needs to follow you around.</p>
+      </div>
+      <div class="promise">
+        <div class="promise-num">Promise 03</div>
+        <h3 class="serif">We <em>genuinely</em> don't make money from your data.</h3>
+        <p>If we ever add affiliate links to a telehealth provider, they'll be clearly labelled — and they'll never be inside a calculator or a tracking pixel.</p>
+      </div>
+    </div>
+
+    <!-- Detail sections -->
+    <section class="detail">
+      <div class="detail-head">
+        <div class="detail-num">01</div>
+        <h2 class="serif">What you type into a calculator.</h2>
+      </div>
+      <div class="detail-body">
+        <div class="split">
+          <div class="split-col plain">
+            <div class="split-label">In plain English</div>
+            <p>Your weight, goal, and medication get math'd against the trial data right there on your phone. They go nowhere. You can refresh the page and they're gone — even from us.</p>
+          </div>
+          <div class="split-col legal">
+            <div class="split-label">Legal version</div>
+            <p>Inputs to the calculators are processed entirely client-side using JavaScript. They are never transmitted to our servers or any third party. We do not have servers that receive or store health information; we do not have a user account system; we do not have a database of health records.</p>
+          </div>
+        </div>
+        <p>The only data persisted in your browser is a single preference flag (whether you've dismissed the medical disclaimer banner). It contains no health information.</p>
+      </div>
+    </section>
+
+    <section class="detail">
+      <div class="detail-head">
+        <div class="detail-num">02</div>
+        <h2 class="serif">How we count visitors.</h2>
+      </div>
+      <div class="detail-body">
+        <p>We use <strong>Plausible Analytics</strong> to know how many people visit and which pages are popular. Plausible is a European, privacy-preserving service that:</p>
+        <ul>
+          <li>Doesn't use cookies</li>
+          <li>Doesn't collect or store personal data</li>
+          <li>Doesn't fingerprint or track across sites</li>
+          <li>Is GDPR / CCPA / PECR compliant without a cookie banner</li>
+          <li>Doesn't send anything to Google, Meta, or any ad network</li>
+        </ul>
+        <p>The data Plausible collects (aggregate page views, referrer source, approximate country) is not linked to individuals and cannot identify you.</p>
+      </div>
+    </section>
+
+    <section class="detail">
+      <div class="detail-head">
+        <div class="detail-num">03</div>
+        <h2 class="serif">Advertising and affiliates.</h2>
+      </div>
+      <div class="detail-body">
+        <p>GLP Index does not run advertising networks, advertising trackers, or retargeting pixels. We do not use Google Ads, Meta Pixel, TikTok Pixel, or any similar service.</p>
+        <p>GLP Index does not currently have affiliate partnerships. If we add affiliate links in the future, they will be clearly disclosed — and they will not involve third-party tracking code running on our pages.</p>
+      </div>
+    </section>
+
+    <section class="detail">
+      <div class="detail-head">
+        <div class="detail-num">04</div>
+        <h2 class="serif">Links that leave the site.</h2>
+      </div>
+      <div class="detail-body">
+        <p>Links to clinical-trial papers (NEJM, Lancet) and pharmacy / pricing sources take you to third-party websites. Once you leave GLP Index, those sites' own privacy policies apply. We encourage you to review them before providing any personal information.</p>
+      </div>
+    </section>
+
+    <section class="detail">
+      <div class="detail-head">
+        <div class="detail-num">05</div>
+        <h2 class="serif">Hosting.</h2>
+      </div>
+      <div class="detail-body">
+        <p>GLP Index is hosted on Cloudflare Pages. Cloudflare may collect server-side logs (IP addresses, request timestamps) as part of standard web infrastructure operation. These logs are governed by Cloudflare's privacy policy.</p>
+      </div>
+    </section>
+
+    <section class="detail">
+      <div class="detail-head">
+        <div class="detail-num">06</div>
+        <h2 class="serif">Questions.</h2>
+      </div>
+      <div class="detail-body">
+        <p>If you have questions about this privacy policy, reach us at <a href="mailto:hello@glpdash.com">hello@glpdash.com</a>. We read every message and reply within a few days.</p>
+      </div>
+    </section>
+  </div>
 
   <Footer />
 </BaseLayout>
+
+<style>
+  .page-head {
+    padding: 64px 0 40px;
+    border-bottom: 1px solid #E0DAD0;
+  }
+
+  /* Promises grid */
+  .promises {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #E0DAD0;
+    border: 1px solid #E0DAD0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 48px 0;
+  }
+
+  .promise {
+    background: #FBFAF7;
+    padding: 32px 28px;
+  }
+
+  .promise-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #3F5D52;
+    margin-bottom: 14px;
+  }
+
+  .promise h3 {
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    max-width: 14ch;
+  }
+
+  .promise h3 em { font-style: italic; color: #3F5D52; }
+
+  .promise p { font-size: 14px; color: #3A352E; line-height: 1.55; }
+
+  /* Detail sections */
+  .detail {
+    padding: 48px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: start;
+    border-top: 1px solid #E0DAD0;
+  }
+
+  .detail-head h2 {
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    max-width: 14ch;
+  }
+
+  .detail-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: #6B655C;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .detail-body { max-width: 62ch; }
+
+  .detail-body p {
+    margin: 0 0 16px;
+    font-size: 15px;
+    color: #3A352E;
+    line-height: 1.65;
+  }
+
+  .detail-body p strong { color: #1A1815; font-weight: 600; }
+
+  .detail-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+
+  .detail-body li {
+    position: relative;
+    padding: 6px 0 6px 22px;
+    font-size: 14px;
+    color: #3A352E;
+    line-height: 1.55;
+  }
+
+  .detail-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 8px;
+    height: 1px;
+    background: #3F5D52;
+  }
+
+  .detail-body a {
+    color: #3F5D52;
+    border-bottom: 1px solid color-mix(in srgb, #3F5D52 30%, transparent);
+  }
+
+  /* Plain/legal split */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 24px 0;
+    background: #FBFAF7;
+    border: 1px solid #E0DAD0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .split-col { padding: 20px 24px; }
+
+  .split-col + .split-col { border-left: 1px solid #E0DAD0; }
+
+  .split-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6B655C;
+    margin-bottom: 10px;
+  }
+
+  .plain .split-label { color: #3F5D52; }
+
+  .split-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    color: #3A352E;
+  }
+
+  .plain p {
+    color: #1A1815;
+    font-family: "Fraunces", serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 880px) {
+    .promises { grid-template-columns: 1fr; }
+    .detail { grid-template-columns: 1fr; gap: 16px; }
+    .split { grid-template-columns: 1fr; }
+    .split-col + .split-col { border-left: none; border-top: 1px solid #E0DAD0; }
+  }
+</style>

@@ -2,35 +2,44 @@
 import BaseLayout from "../components/layout/BaseLayout.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
-import DisclaimerBanner from "../components/layout/DisclaimerBanner.astro";
 import DoseScheduleCalculator from "../components/calculators/DoseScheduleCalculator";
 ---
 
 <BaseLayout
-  title="GLP-1 Dose Escalation Schedule Generator | GLPDash"
-  description="Generate your personal GLP-1 injection schedule with exact dates for every dose increase. Download as a calendar file for Wegovy, Ozempic, Mounjaro, or Zepbound."
+  title="Dose Schedule — GLP Index"
+  description="Generate a personal GLP-1 dose escalation schedule with exact dates for Wegovy, Ozempic, Mounjaro, or Zepbound. Export to Apple Calendar or Google Calendar."
 >
   <Header />
-  <DisclaimerBanner />
 
-  <main class="max-w-3xl mx-auto px-4 py-10">
-    <div class="mb-8">
-      <nav class="flex items-center gap-2 text-xs text-[#94A3B8] mb-4">
-        <a href="/" class="hover:text-[#F8FAFC] transition-colors">Home</a>
-        <span>/</span>
-        <span class="text-[#F8FAFC]">Dose Schedule</span>
-      </nav>
-      <h1 class="text-3xl font-bold text-[#F8FAFC] tracking-tight">Dose Escalation Schedule</h1>
-      <p class="mt-2 text-[#94A3B8]">
-        Generate your personal injection schedule with exact dates. Download it to your calendar so you never miss a dose increase.
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">GLP Index</a>
+        <span class="sep">/</span>
+        <span class="now">Dose Schedule</span>
+      </div>
+      <h1 class="serif" style="font-weight:500;font-size:clamp(36px,4.4vw,52px);max-width:22ch">
+        When do you step up — and to <em>what?</em>
+      </h1>
+      <p class="deck" style="margin-top:14px;font-size:17px;max-width:60ch">
+        A personal escalation plan with exact dates, built from the FDA prescribing information for your medication. Drop it into your calendar in one click.
       </p>
     </div>
+  </section>
 
+  <div class="wrap" style="padding-bottom:80px">
     <DoseScheduleCalculator client:load />
-  </main>
+  </div>
 
   <Footer />
 </BaseLayout>
+
+<style>
+  .page-head {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid #E0DAD0;
+  }
+</style>
 
 <script type="application/ld+json">
 {

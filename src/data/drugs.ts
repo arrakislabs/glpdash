@@ -10,6 +10,7 @@ export interface Drug {
   maxDoseMg: number;
   color: string;
   trialName: string;
+  citation: string;
 }
 
 export const drugs: Record<DrugId, Drug> = {
@@ -21,8 +22,9 @@ export const drugs: Record<DrugId, Drug> = {
     activeIngredient: "Semaglutide",
     approvedFor: "weight-loss",
     maxDoseMg: 2.4,
-    color: "#10B981",
+    color: "#3F5D52",
     trialName: "STEP 1",
+    citation: "N Engl J Med 384:989 (2021)",
   },
   ozempic: {
     id: "ozempic",
@@ -32,8 +34,9 @@ export const drugs: Record<DrugId, Drug> = {
     activeIngredient: "Semaglutide",
     approvedFor: "diabetes",
     maxDoseMg: 2.0,
-    color: "#6366F1",
+    color: "#5B7B8A",
     trialName: "STEP 2",
+    citation: "Lancet 397:971 (2021)",
   },
   mounjaro: {
     id: "mounjaro",
@@ -43,8 +46,9 @@ export const drugs: Record<DrugId, Drug> = {
     activeIngredient: "Tirzepatide",
     approvedFor: "diabetes",
     maxDoseMg: 15,
-    color: "#F59E0B",
+    color: "#A05A3D",
     trialName: "SURPASS-2",
+    citation: "N Engl J Med 385:503 (2021)",
   },
   zepbound: {
     id: "zepbound",
@@ -54,8 +58,9 @@ export const drugs: Record<DrugId, Drug> = {
     activeIngredient: "Tirzepatide",
     approvedFor: "weight-loss",
     maxDoseMg: 15,
-    color: "#EC4899",
+    color: "#85684A",
     trialName: "SURMOUNT-1",
+    citation: "N Engl J Med 387:205 (2022)",
   },
 };
 

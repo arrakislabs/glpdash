@@ -2,35 +2,44 @@
 import BaseLayout from "../components/layout/BaseLayout.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
-import DisclaimerBanner from "../components/layout/DisclaimerBanner.astro";
 import WeightLossCalculator from "../components/calculators/WeightLossCalculator";
 ---
 
 <BaseLayout
-  title="Ozempic & Wegovy Weight Loss Timeline Calculator | GLPDash"
-  description="Estimate your weight loss week-by-week on Ozempic, Wegovy, Mounjaro, or Zepbound. Based on published STEP and SURMOUNT clinical trial data. Free and private."
+  title="Weight Loss Timeline — GLP Index"
+  description="Project your weight loss week-by-week on Wegovy, Ozempic, Mounjaro, or Zepbound — from the actual STEP and SURMOUNT trial curves."
 >
   <Header />
-  <DisclaimerBanner />
 
-  <main class="max-w-5xl mx-auto px-4 py-10">
-    <div class="mb-8">
-      <nav class="flex items-center gap-2 text-xs text-[#94A3B8] mb-4">
-        <a href="/" class="hover:text-[#F8FAFC] transition-colors">Home</a>
-        <span>/</span>
-        <span class="text-[#F8FAFC]">Weight Loss Timeline</span>
-      </nav>
-      <h1 class="text-3xl font-bold text-[#F8FAFC] tracking-tight">Weight Loss Timeline</h1>
-      <p class="mt-2 text-[#94A3B8]">
-        Project your expected weight loss based on published clinical trial data for your medication.
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">GLP Index</a>
+        <span class="sep">/</span>
+        <span class="now">Weight Loss Timeline</span>
+      </div>
+      <h1 class="serif" style="font-weight:500;font-size:clamp(36px,4.4vw,52px);max-width:22ch">
+        How much weight will <em>you</em> really lose?
+      </h1>
+      <p class="deck" style="margin-top:14px;font-size:17px;max-width:58ch">
+        Your projected curve, week by week, calculated from the same clinical-trial data your prescriber reads. Move the inputs — the chart and milestones update live. Nothing is sent anywhere.
       </p>
     </div>
+  </section>
 
+  <div class="wrap" style="padding-bottom:80px">
     <WeightLossCalculator client:load />
-  </main>
+  </div>
 
   <Footer />
 </BaseLayout>
+
+<style>
+  .page-head {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid #E0DAD0;
+  }
+</style>
 
 <script type="application/ld+json">
 {

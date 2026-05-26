@@ -2,35 +2,70 @@
 import BaseLayout from "../components/layout/BaseLayout.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
-import DisclaimerBanner from "../components/layout/DisclaimerBanner.astro";
 import CostComparisonCalculator from "../components/calculators/CostComparisonCalculator";
 ---
 
 <BaseLayout
-  title="GLP-1 Drug Cost Comparison: Ozempic vs Wegovy vs Mounjaro | GLPDash"
-  description="Compare the real cost of Ozempic, Wegovy, Mounjaro, and Zepbound — retail, GoodRx, insurance, and telehealth. Updated May 2026."
+  title="Drug Cost Comparison — GLP Index"
+  description="Compare retail, GoodRx, insurance, and telehealth pricing for Ozempic, Wegovy, Mounjaro, and Zepbound — refreshed May 2026."
 >
   <Header />
-  <DisclaimerBanner />
 
-  <main class="max-w-5xl mx-auto px-4 py-10">
-    <div class="mb-8">
-      <nav class="flex items-center gap-2 text-xs text-[#94A3B8] mb-4">
-        <a href="/" class="hover:text-[#F8FAFC] transition-colors">Home</a>
-        <span>/</span>
-        <span class="text-[#F8FAFC]">Drug Cost Comparison</span>
-      </nav>
-      <h1 class="text-3xl font-bold text-[#F8FAFC] tracking-tight">Drug Cost Comparison</h1>
-      <p class="mt-2 text-[#94A3B8]">
-        Compare retail, GoodRx, insurance, and telehealth prices for every GLP-1 medication side by side.
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">GLP Index</a>
+        <span class="sep">/</span>
+        <span class="now">Drug Cost Comparison</span>
+      </div>
+      <h1 class="serif" style="font-weight:500;font-size:clamp(36px,4.4vw,52px);max-width:22ch">
+        What will you <em>actually</em> pay each month?
+      </h1>
+      <p class="deck" style="margin-top:14px;font-size:17px;max-width:62ch">
+        Retail, GoodRx, insurance, and telehealth pricing for every brand-name GLP&#8209;1 on the U.S. market — side by side, with the math shown. Refreshed by hand, not scraped.
       </p>
+      <div class="meta-strip">
+        <span>Last updated · <strong>May 1, 2026</strong></span>
+        <span>Method · <strong>Manual verification against GoodRx and provider sites</strong></span>
+        <span>Disclosure · <strong>No affiliate links on this page</strong></span>
+      </div>
     </div>
+  </section>
 
+  <div class="wrap" style="padding-bottom:80px">
     <CostComparisonCalculator client:load />
-  </main>
+  </div>
 
   <Footer />
 </BaseLayout>
+
+<style>
+  .page-head {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid #E0DAD0;
+  }
+
+  .meta-strip {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: #6B655C;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .meta-strip span strong {
+    color: #1A1815;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+</style>
 
 <script type="application/ld+json">
 {
