@@ -1,0 +1,96 @@
+---
+const navLinks = [
+  { href: "/weight-loss-timeline", label: "Weight Loss" },
+  { href: "/cost-comparison", label: "Drug Costs" },
+  { href: "/dose-schedule", label: "Dose Schedule" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="border-b border-[#334155] bg-[#0F172A]/95 backdrop-blur-sm sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 group">
+      <span class="text-xl font-bold text-[#F8FAFC] tracking-tight">
+        GLP<span class="text-[#10B981]">Dash</span>
+      </span>
+      <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] group-hover:scale-125 transition-transform"></span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              currentPath.startsWith(link.href)
+                ? "bg-[#1E293B] text-[#F8FAFC]"
+                : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#1E293B]"
+            }`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a
+      href="https://ro.co/weight-loss/"
+      target="_blank"
+      rel="noopener noreferrer sponsored"
+      class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#10B981] hover:bg-[#059669] text-sm font-semibold text-white transition-colors"
+    >
+      Get Prescribed
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M3 7h8m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <!-- Mobile hamburger placeholder — functional nav via mobile menu below -->
+    <button
+      id="mobile-menu-toggle"
+      class="md:hidden p-2 rounded-lg text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#1E293B]"
+      aria-label="Open menu"
+    >
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[#334155] bg-[#0F172A]">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+              currentPath.startsWith(link.href)
+                ? "bg-[#1E293B] text-[#F8FAFC]"
+                : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#1E293B]"
+            }`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="https://ro.co/weight-loss/"
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+        class="mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#10B981] hover:bg-[#059669] text-sm font-semibold text-white transition-colors"
+      >
+        Get Prescribed
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  toggle?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

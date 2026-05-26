@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import DisclaimerBanner from "../components/layout/DisclaimerBanner.astro";
+import WeightLossCalculator from "../components/calculators/WeightLossCalculator";
+---
+
+<BaseLayout
+  title="Ozempic & Wegovy Weight Loss Timeline Calculator | GLPDash"
+  description="Estimate your weight loss week-by-week on Ozempic, Wegovy, Mounjaro, or Zepbound. Based on published STEP and SURMOUNT clinical trial data. Free and private."
+>
+  <Header />
+  <DisclaimerBanner />
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <div class="mb-8">
+      <nav class="flex items-center gap-2 text-xs text-[#94A3B8] mb-4">
+        <a href="/" class="hover:text-[#F8FAFC] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-[#F8FAFC]">Weight Loss Timeline</span>
+      </nav>
+      <h1 class="text-3xl font-bold text-[#F8FAFC] tracking-tight">Weight Loss Timeline</h1>
+      <p class="mt-2 text-[#94A3B8]">
+        Project your expected weight loss based on published clinical trial data for your medication.
+      </p>
+    </div>
+
+    <WeightLossCalculator client:load />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GLP-1 Weight Loss Timeline Calculator",
+  "url": "https://glpdash.com/weight-loss-timeline",
+  "applicationCategory": "HealthApplication",
+  "description": "Estimate weekly weight loss on Ozempic, Wegovy, Mounjaro, or Zepbound based on clinical trial data.",
+  "offers": { "@type": "Offer", "price": "0" }
+}
+</script>

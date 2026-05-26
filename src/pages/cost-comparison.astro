@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import DisclaimerBanner from "../components/layout/DisclaimerBanner.astro";
+import CostComparisonCalculator from "../components/calculators/CostComparisonCalculator";
+---
+
+<BaseLayout
+  title="GLP-1 Drug Cost Comparison: Ozempic vs Wegovy vs Mounjaro | GLPDash"
+  description="Compare the real cost of Ozempic, Wegovy, Mounjaro, and Zepbound — retail, GoodRx, insurance, and telehealth. Updated May 2026."
+>
+  <Header />
+  <DisclaimerBanner />
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <div class="mb-8">
+      <nav class="flex items-center gap-2 text-xs text-[#94A3B8] mb-4">
+        <a href="/" class="hover:text-[#F8FAFC] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-[#F8FAFC]">Drug Cost Comparison</span>
+      </nav>
+      <h1 class="text-3xl font-bold text-[#F8FAFC] tracking-tight">Drug Cost Comparison</h1>
+      <p class="mt-2 text-[#94A3B8]">
+        Compare retail, GoodRx, insurance, and telehealth prices for every GLP-1 medication side by side.
+      </p>
+    </div>
+
+    <CostComparisonCalculator client:load />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GLP-1 Drug Cost Comparison",
+  "url": "https://glpdash.com/cost-comparison",
+  "applicationCategory": "HealthApplication",
+  "description": "Compare the cost of Ozempic, Wegovy, Mounjaro, and Zepbound across retail, GoodRx, and telehealth channels.",
+  "offers": { "@type": "Offer", "price": "0" }
+}
+</script>

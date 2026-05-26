@@ -1,0 +1,197 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+---
+
+<BaseLayout
+  title="GLP-1 Calculators — Weight Loss, Cost & Dose Schedule | GLPDash"
+  description="Free calculators for Ozempic, Wegovy, Mounjaro, and Zepbound. Estimate your weight loss timeline, compare drug costs, and generate your dose escalation schedule. Private by design."
+>
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden py-20 px-4">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#10B981]/5 via-transparent to-[#6366F1]/5 pointer-events-none" />
+      <div class="max-w-4xl mx-auto text-center relative">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/20 text-xs font-medium text-[#10B981] mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+          Free · Private · No account required
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F8FAFC] leading-tight tracking-tight">
+          Your GLP-1 toolkit.
+          <br />
+          <span class="text-[#10B981]">Built on real data.</span>
+        </h1>
+        <p class="mt-6 text-lg text-[#94A3B8] max-w-2xl mx-auto leading-relaxed">
+          Calculators for Ozempic, Wegovy, Mounjaro, and Zepbound — built on published clinical trial data.
+          Nothing is stored or tracked.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4 justify-center">
+          <a
+            href="/weight-loss-timeline"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white font-semibold text-base transition-colors shadow-lg shadow-[#10B981]/20"
+          >
+            Estimate my weight loss
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a
+            href="/cost-comparison"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#334155] hover:border-[#475569] text-[#F8FAFC] font-semibold text-base transition-colors"
+          >
+            Compare drug costs
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tool grid -->
+    <section class="py-16 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-center text-sm font-semibold text-[#94A3B8] uppercase tracking-widest mb-12">
+          Three tools. Zero fluff.
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a
+            href="/weight-loss-timeline"
+            class="group block p-6 rounded-2xl border border-[#334155] bg-[#1E293B] hover:border-[#10B981]/40 hover:bg-[#1E293B]/80 transition-all"
+          >
+            <div class="w-12 h-12 rounded-xl bg-[#10B981]/10 flex items-center justify-center mb-5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 17l5-5 4 4 9-9" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-[#F8FAFC] mb-2">Weight Loss Timeline</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              See your projected weight loss week-by-week, based on the same clinical trial data your doctor uses.
+            </p>
+            <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-[#10B981] group-hover:gap-2 transition-all">
+              Try it
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a
+            href="/cost-comparison"
+            class="group block p-6 rounded-2xl border border-[#334155] bg-[#1E293B] hover:border-[#6366F1]/40 hover:bg-[#1E293B]/80 transition-all"
+          >
+            <div class="w-12 h-12 rounded-xl bg-[#6366F1]/10 flex items-center justify-center mb-5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-[#F8FAFC] mb-2">Drug Cost Comparison</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              Compare retail, GoodRx, insurance, and telehealth prices for every GLP-1 drug side by side.
+            </p>
+            <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-[#6366F1] group-hover:gap-2 transition-all">
+              Compare costs
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+
+          <a
+            href="/dose-schedule"
+            class="group block p-6 rounded-2xl border border-[#334155] bg-[#1E293B] hover:border-[#F59E0B]/40 hover:bg-[#1E293B]/80 transition-all"
+          >
+            <div class="w-12 h-12 rounded-xl bg-[#F59E0B]/10 flex items-center justify-center mb-5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" stroke="#F59E0B" stroke-width="2"/>
+                <path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-[#F8FAFC] mb-2">Dose Schedule Generator</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">
+              Generate your personal injection schedule with exact dates. Download as a calendar file.
+            </p>
+            <span class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-[#F59E0B] group-hover:gap-2 transition-all">
+              Generate schedule
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 7h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-16 px-4 border-t border-[#334155]">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-center text-xl font-semibold text-[#F8FAFC] mb-12">How it works</h2>
+        <div class="grid sm:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#334155] flex items-center justify-center mx-auto mb-4">
+              <span class="text-sm font-bold text-[#10B981]">1</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#F8FAFC] mb-2">Enter your details</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">Your weight, goal, and medication. Everything stays in your browser — nothing is sent anywhere.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#334155] flex items-center justify-center mx-auto mb-4">
+              <span class="text-sm font-bold text-[#10B981]">2</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#F8FAFC] mb-2">See your projection</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">Calculations run on published trial data. You get a chart, not a sales pitch.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-10 h-10 rounded-full bg-[#1E293B] border border-[#334155] flex items-center justify-center mx-auto mb-4">
+              <span class="text-sm font-bold text-[#10B981]">3</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#F8FAFC] mb-2">Make informed decisions</h3>
+            <p class="text-sm text-[#94A3B8] leading-relaxed">Take the numbers to your doctor. Or use our partner links to get a prescription online.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy strip -->
+    <section class="py-12 px-4 bg-[#1E293B] border-y border-[#334155]">
+      <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div>
+          <p class="text-base font-semibold text-[#F8FAFC]">Private by design</p>
+          <p class="text-sm text-[#94A3B8] mt-1">No account. No cookies. No health data leaves your browser.</p>
+        </div>
+        <div class="flex gap-6 text-xs text-[#94A3B8]">
+          <span class="flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7l3.5 3.5L12 3" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Zero storage
+          </span>
+          <span class="flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7l3.5 3.5L12 3" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            No trackers
+          </span>
+          <span class="flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7l3.5 3.5L12 3" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Always free
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "GLPDash",
+  "url": "https://glpdash.com",
+  "description": "Free GLP-1 calculators for Ozempic, Wegovy, Mounjaro, and Zepbound."
+}
+</script>

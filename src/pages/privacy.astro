@@ -1,0 +1,103 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+---
+
+<BaseLayout
+  title="Privacy Policy | GLPDash"
+  description="GLPDash does not collect, store, or transmit your health data. All calculator inputs stay in your browser. Read our full privacy policy."
+>
+  <Header />
+
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <nav class="flex items-center gap-2 text-xs text-[#94A3B8] mb-8">
+      <a href="/" class="hover:text-[#F8FAFC] transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-[#F8FAFC]">Privacy</span>
+    </nav>
+
+    <h1 class="text-3xl font-bold text-[#F8FAFC] mb-3">Privacy Policy</h1>
+    <p class="text-sm text-[#94A3B8] mb-10">Last updated: May 2026</p>
+
+    <div class="space-y-10 text-[#94A3B8] leading-relaxed">
+      <section class="p-5 rounded-2xl bg-[#10B981]/5 border border-[#10B981]/20">
+        <p class="text-[#F8FAFC] font-semibold">The short version</p>
+        <p class="mt-2 text-sm">
+          Your health data never leaves your device. All calculations happen in your browser. We don't have a database of user health records because we don't collect any.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Calculator data</h2>
+        <p>
+          When you use our calculators, the data you enter (weight, height, goals, medication) is processed entirely in your browser using JavaScript. It is never sent to our servers or any third-party service.
+        </p>
+        <p class="mt-3">
+          We do not have servers that receive or store your health information. There is no user account system, no database of health records, and no way for us to retrieve data you entered.
+        </p>
+        <p class="mt-3">
+          The only data stored in your browser is a single preference flag (whether you have dismissed the disclaimer banner), which contains no health information.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Analytics</h2>
+        <p>
+          We use <strong class="text-[#F8FAFC]">Plausible Analytics</strong> to understand how many people visit GLPDash and which pages are popular. Plausible is a privacy-preserving analytics service that:
+        </p>
+        <ul class="mt-3 space-y-2">
+          {[
+            "Does not use cookies",
+            "Does not collect or store personal data",
+            "Does not use fingerprinting or cross-site tracking",
+            "Is compliant with GDPR, CCPA, and PECR without requiring consent banners",
+            "Does not send data to Google, Facebook, or any advertising network",
+          ].map((item) => (
+            <li class="flex gap-3 text-sm">
+              <span class="shrink-0 w-1.5 h-1.5 rounded-full bg-[#10B981] mt-1.5" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <p class="mt-3 text-sm">
+          The data Plausible collects (aggregate page views, referrer sources, approximate country) is not linked to individuals and cannot identify you.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Advertising</h2>
+        <p>
+          GLPDash does not run advertising networks, advertising trackers, or retargeting pixels. We do not use Google Ads, Meta Pixel, TikTok Pixel, or similar services.
+        </p>
+        <p class="mt-3">
+          We display contextual affiliate links to telehealth providers. These links are static — clicking them takes you to the partner's website, but no tracking code from those partners runs on our pages before you click.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Third-party links</h2>
+        <p>
+          Our affiliate partner links (Ro Health, Hims/Hers) take you to third-party websites. Once you leave GLPDash, those websites' own privacy policies apply. We encourage you to review their privacy policies before providing any personal information.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Hosting</h2>
+        <p>
+          GLPDash is hosted on Cloudflare Pages. Cloudflare may collect server-side logs (IP addresses, request timestamps) as part of standard web infrastructure operation. These logs are retained and governed by Cloudflare's privacy policy.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-[#F8FAFC] mb-3">Contact</h2>
+        <p>
+          If you have questions about this privacy policy, you can reach us at{" "}
+          <a href="mailto:hello@glpdash.com" class="text-[#10B981] hover:underline">hello@glpdash.com</a>.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

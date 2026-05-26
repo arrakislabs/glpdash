@@ -1,0 +1,38 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[#334155] mt-auto py-10 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div>
+        <a href="/" class="text-lg font-bold text-[#F8FAFC]">
+          GLP<span class="text-[#10B981]">Dash</span>
+        </a>
+        <p class="mt-1 text-sm text-[#94A3B8]">
+          Free GLP-1 calculators. Private by design.
+        </p>
+      </div>
+
+      <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#94A3B8]">
+        <a href="/weight-loss-timeline" class="hover:text-[#F8FAFC] transition-colors">Weight Loss</a>
+        <a href="/cost-comparison" class="hover:text-[#F8FAFC] transition-colors">Drug Costs</a>
+        <a href="/dose-schedule" class="hover:text-[#F8FAFC] transition-colors">Dose Schedule</a>
+        <a href="/about" class="hover:text-[#F8FAFC] transition-colors">About</a>
+        <a href="/privacy" class="hover:text-[#F8FAFC] transition-colors">Privacy</a>
+      </nav>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-[#334155] flex flex-col gap-2">
+      <p class="text-xs text-[#94A3B8]">
+        <strong class="text-[#F59E0B]">Affiliate disclosure:</strong> GLPDash earns a commission if you sign up through our partner links. This does not affect our data or recommendations.
+      </p>
+      <p class="text-xs text-[#94A3B8]">
+        <strong>Not medical advice.</strong> All estimates are based on published clinical trial averages. Individual results vary. Always consult your healthcare provider before starting any medication.
+      </p>
+      <p class="text-xs text-[#94A3B8] mt-2">
+        © {year} GLPDash. Nothing is stored or tracked.
+      </p>
+    </div>
+  </div>
+</footer>
