@@ -1,9 +1,9 @@
 ---
 const navLinks = [
-  { href: "/weight-loss-timeline", label: "Weight Loss" },
-  { href: "/cost-comparison", label: "Drug Costs" },
-  { href: "/dose-schedule", label: "Dose Schedule" },
-  { href: "/about", label: "About" },
+  { href: "/weight-loss-timeline/", label: "Weight Loss" },
+  { href: "/cost-comparison/", label: "Drug Costs" },
+  { href: "/dose-schedule/", label: "Dose Schedule" },
+  { href: "/about/", label: "About" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -28,7 +28,7 @@ const currentPath = Astro.url.pathname;
       ))}
     </nav>
 
-    <a class="nav-cta" href="/weight-loss-timeline">Start a projection</a>
+    <a class="nav-cta" href="/weight-loss-timeline/">Start a projection</a>
 
     <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -47,7 +47,7 @@ const currentPath = Astro.url.pathname;
           {link.label}
         </a>
       ))}
-      <a href="/weight-loss-timeline" class="mobile-cta">Start a projection →</a>
+      <a href="/weight-loss-timeline/" class="mobile-cta">Start a projection →</a>
     </nav>
   </div>
 </header>
