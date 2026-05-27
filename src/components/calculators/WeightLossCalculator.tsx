@@ -64,20 +64,24 @@ export default function WeightLossCalculator() {
   const [unit, setUnit] = useState<WeightUnit>("lbs");
   const [drugId, setDrugId] = useState<DrugId>("wegovy");
   const [currentWeightLbs, setCurrentWeightLbs] = useState(220);
-  const [goalWeightLbs, setGoalWeightLbs] = useState(180);
+  const [currentWeightStr, setCurrentWeightStr] = useState("220");
+  const [goalWeightLbs, setGoalWeightLbs] = useState<number | null>(null);
+  const [goalWeightStr, setGoalWeightStr] = useState("");
   const [heightFeet, setHeightFeet] = useState(5);
   const [heightInches, setHeightInches] = useState(7);
 
   const heightTotalInches = heightFeet * 12 + heightInches;
 
   function handleUnitChange(newUnit: WeightUnit) {
+    if (newUnit === unit) return;
     setUnit(newUnit);
-  }
-
-  function parseWeightInput(raw: string, currentLbs: number): number {
-    const parsed = parseFloat(raw);
-    if (isNaN(parsed) || parsed <= 0) return currentLbs;
-    return unit === "kg" ? kgToLbs(parsed) : parsed;
+    if (newUnit === "kg") {
+      setCurrentWeightStr(String(lbsToKg(currentWeightLbs)));
+      if (goalWeightLbs !== null) setGoalWeightStr(String(lbsToKg(goalWeightLbs)));
+    } else {
+      setCurrentWeightStr(String(currentWeightLbs));
+      if (goalWeightLbs !== null) setGoalWeightStr(String(goalWeightLbs));
+    }
   }
 
   const projection = useMemo(
@@ -91,7 +95,9 @@ export default function WeightLossCalculator() {
   }));
 
   const displayCurrentWeight = unit === "lbs" ? currentWeightLbs : lbsToKg(currentWeightLbs);
-  const displayGoalWeight = unit === "lbs" ? goalWeightLbs : lbsToKg(goalWeightLbs);
+  const displayGoalWeight = goalWeightLbs !== null
+    ? (unit === "lbs" ? goalWeightLbs : lbsToKg(goalWeightLbs))
+    : null;
   const displayLossAtEnd =
     unit === "lbs"
       ? `${projection.projectedLossAtTrialEndLbs.toFixed(1)} lbs`
@@ -124,10 +130,17 @@ export default function WeightLossCalculator() {
               <input
                 type="number"
                 inputMode="decimal"
-                value={unit === "lbs" ? currentWeightLbs : lbsToKg(currentWeightLbs)}
+                value={currentWeightStr}
                 min={unit === "lbs" ? 100 : 45}
                 max={unit === "lbs" ? 600 : 272}
-                onChange={(event) => setCurrentWeightLbs(parseWeightInput(event.target.value, currentWeightLbs))}
+                onChange={(event) => {
+                  const raw = event.target.value;
+                  setCurrentWeightStr(raw);
+                  const parsed = parseFloat(raw);
+                  if (!isNaN(parsed) && parsed > 0) {
+                    setCurrentWeightLbs(unit === "kg" ? kgToLbs(parsed) : parsed);
+                  }
+                }}
               />
               <UnitToggle unit={unit} onChange={handleUnitChange} />
             </div>
@@ -140,10 +153,21 @@ export default function WeightLossCalculator() {
               <input
                 type="number"
                 inputMode="decimal"
-                value={unit === "lbs" ? goalWeightLbs : lbsToKg(goalWeightLbs)}
+                value={goalWeightStr}
                 min={unit === "lbs" ? 80 : 36}
                 max={displayCurrentWeight - 1}
-                onChange={(event) => setGoalWeightLbs(parseWeightInput(event.target.value, goalWeightLbs))}
+                onChange={(event) => {
+                  const raw = event.target.value;
+                  setGoalWeightStr(raw);
+                  if (raw === "" || raw === "0") {
+                    setGoalWeightLbs(null);
+                    return;
+                  }
+                  const parsed = parseFloat(raw);
+                  if (!isNaN(parsed) && parsed > 0) {
+                    setGoalWeightLbs(unit === "kg" ? kgToLbs(parsed) : parsed);
+                  }
+                }}
               />
               <UnitToggle unit={unit} onChange={handleUnitChange} />
             </div>
@@ -214,7 +238,11 @@ export default function WeightLossCalculator() {
 
           <div style={{ background: PAPER, padding: "24px 28px" }}>
             <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: MUTED, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 6 }}>
-              {goalWeek !== null ? "You'll likely hit your goal around" : "Or set a goal weight on the left"}
+              {goalWeek !== null
+                ? "You'll likely hit your goal around"
+                : goalWeightLbs !== null
+                  ? "Goal is beyond this trial's range"
+                  : "Or set a goal weight on the left"}
             </div>
             <div style={{ fontFamily: "'Fraunces', serif", fontWeight: 400, fontSize: 48, lineHeight: 1, letterSpacing: "-0.03em", color: INK }}>
               {goalWeek !== null ? `wk ${goalWeek}` : "—"}
@@ -222,7 +250,9 @@ export default function WeightLossCalculator() {
             <div style={{ fontSize: 13, color: goalWeek !== null ? SAGE : MUTED, marginTop: 8, fontWeight: goalWeek !== null ? 500 : 400 }}>
               {goalWeek !== null
                 ? `≈ ${Math.round(goalWeek / 4.345)} months from your first dose`
-                : "Goal milestone is optional."}
+                : goalWeightLbs !== null
+                  ? "Try a higher goal weight or a stronger medication."
+                  : "Goal milestone is optional."}
             </div>
           </div>
         </div>
@@ -261,13 +291,15 @@ export default function WeightLossCalculator() {
                 width={65}
               />
               <Tooltip content={<CustomTooltip unit={unit} />} />
-              <ReferenceLine
-                y={unit === "lbs" ? goalWeightLbs : displayGoalWeight}
-                stroke={MUTED}
-                strokeDasharray="3 3"
-                strokeOpacity={0.5}
-                label={{ value: `Goal: ${displayGoalWeight} ${unit}`, position: "right", fill: MUTED, fontSize: 10, fontFamily: "'JetBrains Mono', monospace" }}
-              />
+              {displayGoalWeight !== null && (
+                <ReferenceLine
+                  y={displayGoalWeight}
+                  stroke={MUTED}
+                  strokeDasharray="3 3"
+                  strokeOpacity={0.5}
+                  label={{ value: `Goal: ${displayGoalWeight} ${unit}`, position: "right", fill: MUTED, fontSize: 10, fontFamily: "'JetBrains Mono', monospace" }}
+                />
+              )}
               <Line
                 type="monotone"
                 dataKey="weight"
