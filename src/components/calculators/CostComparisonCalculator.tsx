@@ -221,7 +221,7 @@ export default function CostComparisonCalculator() {
 
               <div>
                 <a
-                  href="/weight-loss-timeline"
+                  href="/weight-loss-timeline/"
                   style={{ fontSize: 13, color: SAGE, fontWeight: 500, display: "inline-flex", alignItems: "center", gap: 6 }}
                 >
                   Project results →

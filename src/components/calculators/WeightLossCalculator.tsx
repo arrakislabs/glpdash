@@ -269,7 +269,7 @@ export default function WeightLossCalculator() {
                 {drug.trialName} mean. Hover the chart for any week's projected weight.
               </p>
             </div>
-            <a className="cite" href="/about#data">{drug.trialName} · {drug.name}</a>
+            <a className="cite" href="/about/#data">{drug.trialName} · {drug.name}</a>
           </div>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={chartData} margin={{ top: 4, right: 20, bottom: 4, left: 10 }}>
