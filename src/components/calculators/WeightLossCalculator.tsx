@@ -65,8 +65,8 @@ export default function WeightLossCalculator() {
   const [drugId, setDrugId] = useState<DrugId>("wegovy");
   const [currentWeightLbs, setCurrentWeightLbs] = useState(220);
   const [currentWeightStr, setCurrentWeightStr] = useState("220");
-  const [goalWeightLbs, setGoalWeightLbs] = useState<number | null>(null);
-  const [goalWeightStr, setGoalWeightStr] = useState("");
+  const [goalWeightLbs, setGoalWeightLbs] = useState<number | null>(190);
+  const [goalWeightStr, setGoalWeightStr] = useState("190");
   const [heightFeet, setHeightFeet] = useState(5);
   const [heightInches, setHeightInches] = useState(7);
   const [linkCopied, setLinkCopied] = useState(false);
@@ -129,11 +129,9 @@ export default function WeightLossCalculator() {
             <label>Current weight</label>
             <div className="input-row">
               <input
-                type="number"
+                type="text"
                 inputMode="decimal"
                 value={currentWeightStr}
-                min={unit === "lbs" ? 100 : 45}
-                max={unit === "lbs" ? 600 : 272}
                 onChange={(event) => {
                   const raw = event.target.value;
                   setCurrentWeightStr(raw);
@@ -145,6 +143,19 @@ export default function WeightLossCalculator() {
               />
               <UnitToggle unit={unit} onChange={handleUnitChange} />
             </div>
+            {(() => {
+              const parsed = parseFloat(currentWeightStr);
+              const minDisplay = unit === "lbs" ? 100 : 45;
+              const maxDisplay = unit === "lbs" ? 600 : 272;
+              if (currentWeightStr !== "" && (!isNaN(parsed)) && (parsed < minDisplay || parsed > maxDisplay)) {
+                return (
+                  <span className="hint" style={{ color: "#C2410C" }}>
+                    Enter a weight between {minDisplay} and {maxDisplay} {unit}.
+                  </span>
+                );
+              }
+              return null;
+            })()}
           </div>
 
           {/* Goal weight */}
@@ -152,11 +163,9 @@ export default function WeightLossCalculator() {
             <label>Goal weight (optional)</label>
             <div className="input-row">
               <input
-                type="number"
+                type="text"
                 inputMode="decimal"
                 value={goalWeightStr}
-                min={unit === "lbs" ? 80 : 36}
-                max={displayCurrentWeight - 1}
                 onChange={(event) => {
                   const raw = event.target.value;
                   setGoalWeightStr(raw);
@@ -172,7 +181,20 @@ export default function WeightLossCalculator() {
               />
               <UnitToggle unit={unit} onChange={handleUnitChange} />
             </div>
-            <span className="hint">Leave blank to just see the curve.</span>
+            {goalWeightStr === "" ? (
+              <span className="hint">Leave blank to just see the curve.</span>
+            ) : goalWeightLbs !== null && goalWeightLbs >= currentWeightLbs ? (
+              <span className="hint" style={{ color: "#C2410C" }}>
+                Goal must be below your current weight.
+              </span>
+            ) : goalWeightLbs !== null && goalWeek === null ? (
+              <span className="hint" style={{ color: "#B45309" }}>
+                {drug.name} projects a floor of ~{unit === "lbs"
+                  ? Math.round(projection.dataPoints[projection.dataPoints.length - 1].projectedWeightLbs)
+                  : lbsToKg(projection.dataPoints[projection.dataPoints.length - 1].projectedWeightLbs)
+                } {unit} from your starting weight. Set a higher goal or try a stronger medication.
+              </span>
+            ) : null}
           </div>
 
           {/* Medication */}
