@@ -44,7 +44,7 @@ const svg = `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http:/
   </text>
 
   <!-- Subhead -->
-  <text x="80" y="470" font-family="Arial, sans-serif" font-size="22" fill="#3A352E">Ozempic · Wegovy · Mounjaro · Zepbound</text>
+  <text x="80" y="470" font-family="Arial, sans-serif" font-size="22" fill="#3A352E">Ozempic · Wegovy · Wegovy HD · Mounjaro · Zepbound</text>
 
   <!-- Right side — stat card -->
   <rect x="820" y="170" width="300" height="210" rx="10" fill="#FBFAF7" stroke="#E0DAD0" stroke-width="1"/>
