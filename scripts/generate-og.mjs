@@ -51,11 +51,11 @@ const svg = `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http:/
   <!-- Card top accent -->
   <rect x="844" y="169" width="48" height="2" fill="#3F5D52"/>
 
-  <text x="844" y="208" font-family="monospace" font-size="11" fill="#6B655C" letter-spacing="2">STEP 1 · WEGOVY · 68 WK</text>
-  <text x="844" y="305" font-family="Georgia, serif" font-size="80" font-weight="400" fill="#1A1815" letter-spacing="-3">−14.9</text>
+  <text x="844" y="208" font-family="monospace" font-size="11" fill="#6B655C" letter-spacing="2">STEP UP · WEGOVY HD · 72 WK</text>
+  <text x="844" y="305" font-family="Georgia, serif" font-size="80" font-weight="400" fill="#1A1815" letter-spacing="-3">−20.7</text>
   <text x="1030" y="278" font-family="Georgia, serif" font-size="28" fill="#6B655C">%</text>
   <text x="844" y="335" font-family="Arial, sans-serif" font-size="13" fill="#6B655C">avg body weight reduction</text>
-  <text x="844" y="353" font-family="Arial, sans-serif" font-size="13" fill="#6B655C">N Engl J Med, 384:989</text>
+  <text x="844" y="353" font-family="Arial, sans-serif" font-size="13" fill="#6B655C">N Engl J Med, 392:1501</text>
 
   <!-- Bottom domain -->
   <text x="80" y="582" font-family="monospace" font-size="14" fill="#6B655C" letter-spacing="2">glpdash.com</text>
