@@ -28,6 +28,7 @@ export default function DoseScheduleCalculator() {
   const [injectionDay, setInjectionDay] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6>(
     new Date().getDay() as 0 | 1 | 2 | 3 | 4 | 5 | 6
   );
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
   const drug = drugs[drugId];
   const steps = titrationSchedules[drugId];
@@ -411,7 +412,11 @@ export default function DoseScheduleCalculator() {
                 ),
                 title: "Shareable link",
                 body: "A URL with no personal info. Send it to yourself, your partner, or your doctor.",
-                action: () => navigator.clipboard?.writeText(window.location.href),
+                action: () => {
+                  navigator.clipboard?.writeText(window.location.href);
+                  setCopiedKey("Shareable link");
+                  setTimeout(() => setCopiedKey(null), 2000);
+                },
               },
             ].map((option) => (
               <button
@@ -441,17 +446,24 @@ export default function DoseScheduleCalculator() {
                 <div style={{
                   width: 36,
                   height: 36,
-                  background: SAGE_SOFT,
-                  color: SAGE,
+                  background: copiedKey === option.title ? SAGE : SAGE_SOFT,
+                  color: copiedKey === option.title ? PAPER : SAGE,
                   borderRadius: 8,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: 8,
+                  transition: "background 0.2s, color 0.2s",
                 }}>
-                  {option.icon}
+                  {copiedKey === option.title ? (
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M4 10l4 4 8-8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  ) : option.icon}
                 </div>
-                <h4 style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 500, color: INK }}>{option.title}</h4>
+                <h4 style={{ fontFamily: "'Fraunces', serif", fontSize: 17, fontWeight: 500, color: copiedKey === option.title ? SAGE : INK }}>
+                  {copiedKey === option.title ? "Copied!" : option.title}
+                </h4>
                 <p style={{ fontSize: 12, color: MUTED, lineHeight: 1.5, margin: 0 }}>{option.body}</p>
               </button>
             ))}

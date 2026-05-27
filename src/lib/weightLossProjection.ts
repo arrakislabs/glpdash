@@ -35,7 +35,7 @@ function calculateBmi(weightLbs: number, heightInches: number): number {
 
 export function projectWeightLoss(
   currentWeightLbs: number,
-  goalWeightLbs: number,
+  goalWeightLbs: number | null,
   heightInches: number,
   drugId: DrugId
 ): WeightLossProjection {
@@ -50,7 +50,7 @@ export function projectWeightLoss(
     const projectedWeightLbs = currentWeightLbs * (1 - weightLossPct / 100);
     dataPoints.push({ week, projectedWeightLbs, weightLossPct });
 
-    if (estimatedGoalWeek === null && projectedWeightLbs <= goalWeightLbs) {
+    if (goalWeightLbs !== null && estimatedGoalWeek === null && projectedWeightLbs <= goalWeightLbs) {
       estimatedGoalWeek = week;
     }
   }
