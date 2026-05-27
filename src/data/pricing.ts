@@ -19,6 +19,14 @@ export const drugPricing: Record<DrugId, DrugPricing> = {
     telehealthMonthly: 299,
     lastUpdated: "2026-05-01",
   },
+  "wegovy-hd": {
+    drugId: "wegovy-hd",
+    retailMonthly: 1499,
+    goodRxMonthly: 1250,
+    withInsuranceEstimate: 25,
+    telehealthMonthly: 399,
+    lastUpdated: "2026-05-01",
+  },
   ozempic: {
     drugId: "ozempic",
     retailMonthly: 968,

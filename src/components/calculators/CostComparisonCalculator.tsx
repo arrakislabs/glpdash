@@ -27,7 +27,7 @@ const CHANNEL_LABELS: Record<string, string> = {
 type TimeHorizon = "monthly" | "annually";
 
 export default function CostComparisonCalculator() {
-  const [selectedDrugs, setSelectedDrugs] = useState<DrugId[]>(["wegovy", "ozempic", "mounjaro", "zepbound"]);
+  const [selectedDrugs, setSelectedDrugs] = useState<DrugId[]>(["wegovy", "wegovy-hd", "ozempic", "mounjaro", "zepbound"]);
   const [showInsurance, setShowInsurance] = useState(false);
   const [timeHorizon, setTimeHorizon] = useState<TimeHorizon>("monthly");
 

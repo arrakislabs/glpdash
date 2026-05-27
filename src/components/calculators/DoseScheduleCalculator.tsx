@@ -54,6 +54,16 @@ export default function DoseScheduleCalculator() {
   }
 
   const stepDescriptions: Record<string, string[]> = {
+    "wegovy-hd": [
+      "Your body's getting used to the medication. Same starter dose as standard Wegovy — this extended schedule is what allows reaching 7.2mg safely.",
+      "Side effects may briefly reappear when stepping up. They usually fade within 1–2 weeks.",
+      "Visible weight loss usually begins here. You're still below the standard Wegovy maintenance dose.",
+      "Passing through the standard Wegovy 1.7mg step on the way to higher doses.",
+      "Standard Wegovy maintenance dose. The HD schedule continues escalating beyond this point.",
+      "First dose above the standard Wegovy ceiling. Side effects may briefly return.",
+      "Approaching the HD maintenance dose. Most patients see accelerating weight loss in this window.",
+      "The STEP UP trial maintenance dose. Average of 20.7% body weight reduction at 72 weeks — roughly 6 points more than the 2.4mg dose.",
+    ],
     wegovy: [
       "Your body's getting used to the medication. Nausea and reflux are most common in this window — eat smaller portions and stay hydrated.",
       "Side effects may briefly reappear when stepping up. They usually fade within 1–2 weeks.",

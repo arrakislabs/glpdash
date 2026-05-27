@@ -7,6 +7,7 @@ export interface TrialDataPoint {
 
 // Derived from published clinical trial data
 // Wegovy: STEP 1 trial (N Engl J Med 2021) — 14.9% at 68 weeks
+// Wegovy HD: STEP UP trial (N Engl J Med 2025) — 20.7% at 72 weeks (semaglutide 7.2mg)
 // Ozempic: STEP 2 trial — ~8.7% at 68 weeks (diabetes population, lower response)
 // Mounjaro/Zepbound: SURMOUNT-1 trial — 20.9% at 72 weeks (15mg arm)
 export const trialCurves: Record<DrugId, TrialDataPoint[]> = {
@@ -23,6 +24,20 @@ export const trialCurves: Record<DrugId, TrialDataPoint[]> = {
     { week: 52, avgWeightLossPct: 13.8 },
     { week: 60, avgWeightLossPct: 14.5 },
     { week: 68, avgWeightLossPct: 14.9 },
+  ],
+  "wegovy-hd": [
+    { week: 0, avgWeightLossPct: 0 },
+    { week: 4, avgWeightLossPct: 0.8 },
+    { week: 8, avgWeightLossPct: 2.0 },
+    { week: 12, avgWeightLossPct: 3.5 },
+    { week: 16, avgWeightLossPct: 5.2 },
+    { week: 20, avgWeightLossPct: 7.0 },
+    { week: 28, avgWeightLossPct: 11.0 },
+    { week: 36, avgWeightLossPct: 14.8 },
+    { week: 44, avgWeightLossPct: 17.6 },
+    { week: 52, avgWeightLossPct: 19.4 },
+    { week: 60, avgWeightLossPct: 20.3 },
+    { week: 72, avgWeightLossPct: 20.7 },
   ],
   ozempic: [
     { week: 0, avgWeightLossPct: 0 },

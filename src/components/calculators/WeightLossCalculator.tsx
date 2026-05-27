@@ -353,6 +353,8 @@ export default function WeightLossCalculator() {
             <strong style={{ color: "#2A3F38", fontWeight: 600 }}>This is an average, not a guarantee.</strong>{" "}
             {drugId === "wegovy"
               ? "In the STEP 1 trial, about 32% of participants lost more than 20% of body weight, while ~14% lost less than 5%."
+              : drugId === "wegovy-hd"
+              ? "In the STEP UP trial, participants on 7.2mg lost an average of 20.7% of body weight — roughly 6 percentage points more than the 2.4mg standard dose arm."
               : drugId === "ozempic"
               ? "In the STEP 2 trial, about 25% of participants lost more than 15% of body weight, while ~20% lost less than 3%."
               : "In the SURMOUNT-1 trial, about 57% of participants on the highest dose lost more than 20% of body weight, while ~9% lost less than 5%."

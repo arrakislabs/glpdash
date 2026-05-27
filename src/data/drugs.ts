@@ -1,4 +1,4 @@
-export type DrugId = "wegovy" | "ozempic" | "mounjaro" | "zepbound";
+export type DrugId = "wegovy" | "wegovy-hd" | "ozempic" | "mounjaro" | "zepbound";
 
 export interface Drug {
   id: DrugId;
@@ -25,6 +25,18 @@ export const drugs: Record<DrugId, Drug> = {
     color: "#3F5D52",
     trialName: "STEP 1",
     citation: "N Engl J Med 384:989 (2021)",
+  },
+  "wegovy-hd": {
+    id: "wegovy-hd",
+    name: "Wegovy HD",
+    genericName: "Semaglutide 7.2mg",
+    manufacturer: "Novo Nordisk",
+    activeIngredient: "Semaglutide",
+    approvedFor: "weight-loss",
+    maxDoseMg: 7.2,
+    color: "#2A3F38",
+    trialName: "STEP UP",
+    citation: "N Engl J Med 392:1501 (2025)",
   },
   ozempic: {
     id: "ozempic",

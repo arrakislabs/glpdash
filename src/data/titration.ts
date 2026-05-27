@@ -17,6 +17,16 @@ export const titrationSchedules: Record<DrugId, DoseStep[]> = {
     { stepNumber: 3, doseMg: 1.7, durationWeeks: 4, label: "1.7 mg", isMaintenance: false },
     { stepNumber: 4, doseMg: 2.4, durationWeeks: 52, label: "2.4 mg — Maintenance dose", isMaintenance: true },
   ],
+  "wegovy-hd": [
+    { stepNumber: 0, doseMg: 0.25, durationWeeks: 4, label: "0.25 mg — Starter dose", isMaintenance: false },
+    { stepNumber: 1, doseMg: 0.5, durationWeeks: 4, label: "0.5 mg", isMaintenance: false },
+    { stepNumber: 2, doseMg: 1.0, durationWeeks: 4, label: "1.0 mg", isMaintenance: false },
+    { stepNumber: 3, doseMg: 1.7, durationWeeks: 4, label: "1.7 mg", isMaintenance: false },
+    { stepNumber: 4, doseMg: 2.4, durationWeeks: 4, label: "2.4 mg", isMaintenance: false },
+    { stepNumber: 5, doseMg: 3.6, durationWeeks: 4, label: "3.6 mg", isMaintenance: false },
+    { stepNumber: 6, doseMg: 5.4, durationWeeks: 4, label: "5.4 mg", isMaintenance: false },
+    { stepNumber: 7, doseMg: 7.2, durationWeeks: 52, label: "7.2 mg — Maintenance dose (HD)", isMaintenance: true },
+  ],
   ozempic: [
     { stepNumber: 0, doseMg: 0.25, durationWeeks: 4, label: "0.25 mg — Starter dose", isMaintenance: false },
     { stepNumber: 1, doseMg: 0.5, durationWeeks: 4, label: "0.5 mg", isMaintenance: false },
