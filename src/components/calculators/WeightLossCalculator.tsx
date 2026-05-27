@@ -69,6 +69,7 @@ export default function WeightLossCalculator() {
   const [goalWeightStr, setGoalWeightStr] = useState("");
   const [heightFeet, setHeightFeet] = useState(5);
   const [heightInches, setHeightInches] = useState(7);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   const heightTotalInches = heightFeet * 12 + heightInches;
 
@@ -192,17 +193,19 @@ export default function WeightLossCalculator() {
             </button>
             <button
               className="btn btn-s"
-              style={{ fontSize: 13, padding: "10px 14px" }}
+              style={{ fontSize: 13, padding: "10px 14px", color: linkCopied ? SAGE : undefined }}
               onClick={() => {
                 const url = new URL(window.location.href);
                 url.searchParams.set("d", drugId);
                 url.searchParams.set("c", String(currentWeightLbs));
-                url.searchParams.set("g", String(goalWeightLbs));
+                url.searchParams.set("g", String(goalWeightLbs ?? ""));
                 url.searchParams.set("u", unit);
                 navigator.clipboard?.writeText(url.toString());
+                setLinkCopied(true);
+                setTimeout(() => setLinkCopied(false), 2000);
               }}
             >
-              Copy link
+              {linkCopied ? "Copied!" : "Copy link"}
             </button>
           </div>
         </div>
