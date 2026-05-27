@@ -279,11 +279,13 @@ export default function CostComparisonCalculator() {
             This reflects the <strong>manufacturer savings card</strong> rate, available with most commercial insurance that covers the medication — not a guarantee of coverage. If your plan doesn't cover it for weight loss (very common for Wegovy and Zepbound), you'll fall back to the cash or telehealth column.
           </p>
         </div>
-        <div style={{ fontFamily: "'Fraunces', serif", fontSize: 64, lineHeight: 1, textAlign: "center", color: SAGE, fontWeight: 400, letterSpacing: "-0.03em" }}>
-          ~63%
-          <sub style={{ fontSize: 18, color: INK_2, fontWeight: 400, display: "block", marginTop: 8, fontFamily: "'Inter', sans-serif", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontFamily: "'Fraunces', serif", fontSize: 64, lineHeight: 1, color: SAGE, fontWeight: 400, letterSpacing: "-0.03em" }}>
+            ~63%
+          </div>
+          <div style={{ fontSize: 13, color: INK_2, fontWeight: 400, marginTop: 10, fontFamily: "'Inter', sans-serif", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.4 }}>
             of commercial plans cover at least one GLP-1 for weight loss
-          </sub>
+          </div>
         </div>
       </div>
 
