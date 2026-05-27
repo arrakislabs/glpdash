@@ -39,14 +39,14 @@ import Footer from "../components/layout/Footer.astro";
           </div>
 
           <aside class="factcard">
-            <div class="fc-label">STEP 1 · Wegovy · 68 weeks</div>
-            <div class="fc-number serif">−14.9<sub>%</sub></div>
+            <div class="fc-label">STEP UP · Wegovy HD · 72 weeks</div>
+            <div class="fc-number serif">−20.7<sub>%</sub></div>
             <div class="fc-cap">
-              Average body weight reduction in 1,961 patients vs. −2.4% on placebo.
-              <strong>This is the number your projection uses.</strong>
+              Average body weight reduction on semaglutide 7.2mg vs. −14.4% on standard 2.4mg dose.
+              <strong>The highest semaglutide result in any published trial.</strong>
             </div>
             <div class="fc-source">
-              <a class="cite" href="#sources">Source → N Engl J Med, 384:989 (2021)</a>
+              <a class="cite" href="#sources">Source → N Engl J Med, 392:1501 (2025)</a>
             </div>
           </aside>
         </div>
@@ -90,10 +90,16 @@ import Footer from "../components/layout/Footer.astro";
     <section class="section" id="sources">
       <div class="wrap">
         <div class="section-eyebrow">02 — What the math is built on</div>
-        <h2 class="section-title serif">Four trials. Cited every time we project a number.</h2>
+        <h2 class="section-title serif">Five trials. Cited every time we project a number.</h2>
         <p class="deck">No proprietary models. No telehealth partnerships. No marketing data. Only the published endpoints — the same ones your prescriber sees.</p>
 
         <div class="sources-grid">
+          <div class="source-card">
+            <div class="source-label">Trial · 2025</div>
+            <h4 class="serif">STEP UP</h4>
+            <p>Semaglutide 7.2 mg (Wegovy HD) vs. 2.4 mg in adults with obesity. 72 weeks. −20.7% on HD dose.</p>
+            <div class="source-pub">NEJM 392:1501 ↗</div>
+          </div>
           <div class="source-card">
             <div class="source-label">Trial · 2021</div>
             <h4 class="serif">STEP 1</h4>
@@ -306,7 +312,7 @@ import Footer from "../components/layout/Footer.astro";
   /* Sources */
   .sources-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
   }
 
@@ -374,7 +380,7 @@ import Footer from "../components/layout/Footer.astro";
   @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; gap: 36px; }
     .tools-grid { grid-template-columns: 1fr; }
-    .sources-grid { grid-template-columns: 1fr 1fr; }
+    .sources-grid { grid-template-columns: 1fr 1fr 1fr; }
     .trust-grid { grid-template-columns: 1fr; padding: 32px 24px; }
   }
 </style>
