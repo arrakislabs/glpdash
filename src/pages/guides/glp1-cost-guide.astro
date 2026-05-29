@@ -1,0 +1,536 @@
+---
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+---
+
+<BaseLayout
+  title="How Much Do GLP-1 Drugs Cost? A Plain Guide (2026) | GLP Index"
+  description="List price, GoodRx, manufacturer savings cards, insurance, and telehealth. Here is what Wegovy, Mounjaro, Zepbound, and Ozempic actually cost under each pricing path in 2026."
+>
+  <Header />
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">GLP Index</a>
+        <span class="sep">/</span>
+        <a href="/guides/">Guides</a>
+        <span class="sep">/</span>
+        <span class="now">GLP-1 cost guide</span>
+      </div>
+      <div class="eyebrow" style="margin-bottom: 20px">Pricing · Updated May 2026</div>
+      <h1 class="serif" style="font-weight:500;font-size:clamp(34px,4.5vw,56px);max-width:22ch">
+        How much do GLP-1 drugs <em>actually</em> cost?
+      </h1>
+      <p class="deck" style="margin-top:18px;max-width:58ch">
+        List price is over $1,000 a month for most of these drugs. What you pay is almost always different. Here is a plain breakdown of every pricing path.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="guide-layout">
+
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#overview">Pricing overview</a>
+        <a href="#list-price">List price</a>
+        <a href="#goodrx">GoodRx</a>
+        <a href="#savings-cards">Savings cards</a>
+        <a href="#insurance">Insurance</a>
+        <a href="#telehealth">Telehealth</a>
+        <a href="#compounded">Compounded</a>
+        <a href="#calculator">Use the calculator</a>
+      </aside>
+
+      <article class="prose guide-body">
+
+        <div class="price-intro" id="overview">
+          <p>
+            There is no single answer to what a GLP-1 drug costs, because the same prescription can cost anywhere from $0 to $1,400 per month depending on your insurance, which pharmacy you use, whether you qualify for a savings program, and whether you go through a traditional pharmacy or a telehealth provider.
+          </p>
+          <p>
+            The sections below cover each path. The cost comparison calculator on this site shows current estimates side by side.
+          </p>
+        </div>
+
+        <h2 id="list-price">List price (without anything else)</h2>
+        <p>
+          List price is what the drug costs at a pharmacy with no insurance, no discount card, no savings program. Almost nobody pays this number, but it sets the ceiling.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Drug</th>
+              <th>Active ingredient</th>
+              <th>Approved for</th>
+              <th>Est. list price / month</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Wegovy</strong></td>
+              <td class="muted">semaglutide 2.4mg</td>
+              <td class="muted">Obesity</td>
+              <td class="num">~$1,350</td>
+            </tr>
+            <tr>
+              <td><strong>Wegovy HD</strong></td>
+              <td class="muted">semaglutide 7.2mg</td>
+              <td class="muted">Obesity</td>
+              <td class="num">~$1,500</td>
+            </tr>
+            <tr>
+              <td><strong>Zepbound</strong></td>
+              <td class="muted">tirzepatide</td>
+              <td class="muted">Obesity</td>
+              <td class="num">~$1,060</td>
+            </tr>
+            <tr>
+              <td><strong>Mounjaro</strong></td>
+              <td class="muted">tirzepatide</td>
+              <td class="muted">Type 2 diabetes</td>
+              <td class="num">~$1,070</td>
+            </tr>
+            <tr>
+              <td><strong>Ozempic</strong></td>
+              <td class="muted">semaglutide 1mg</td>
+              <td class="muted">Type 2 diabetes</td>
+              <td class="num">~$950</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="table-note">
+          Prices are estimates based on GoodRx data and pharmacy list prices as of May 2026. Actual prices vary by pharmacy and location. Use the <a href="/cost-comparison/">cost comparison calculator</a> for current estimates.
+        </p>
+
+        <h2 id="goodrx">GoodRx and discount cards</h2>
+        <p>
+          GoodRx negotiates discounted rates with pharmacies through pharmacy benefit managers. You do not need insurance to use it. You use a GoodRx coupon at checkout instead of insurance.
+        </p>
+        <p>
+          For GLP-1 drugs, GoodRx savings vary but are typically 10 to 30% below list price at certain pharmacies. The bigger savings come from the manufacturer programs below. GoodRx is most useful if you do not qualify for a manufacturer savings card or need coverage at a specific pharmacy.
+        </p>
+        <p>
+          You cannot stack GoodRx with insurance. You use one or the other per transaction.
+        </p>
+
+        <h2 id="savings-cards">Manufacturer savings cards</h2>
+        <p>
+          Both Novo Nordisk (Wegovy) and Eli Lilly (Zepbound, Mounjaro) run savings programs directly. These can meaningfully lower what you pay.
+        </p>
+
+        <div class="savings-cards">
+          <div class="savings-card">
+            <div class="sc-maker">Novo Nordisk</div>
+            <div class="sc-drugs mono">Wegovy · Wegovy HD</div>
+            <div class="sc-program">NovoCare Savings Program</div>
+            <div class="sc-details">
+              <div class="sc-row">
+                <span class="sc-key">With commercial insurance</span>
+                <span class="sc-val">As low as $0/month (varies by plan)</span>
+              </div>
+              <div class="sc-row">
+                <span class="sc-key">Without insurance</span>
+                <span class="sc-val">Eligibility-based discount program</span>
+              </div>
+              <div class="sc-row">
+                <span class="sc-key">Not eligible</span>
+                <span class="sc-val">Medicare, Medicaid, federal programs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="savings-card">
+            <div class="sc-maker">Eli Lilly</div>
+            <div class="sc-drugs mono">Zepbound · Mounjaro</div>
+            <div class="sc-program">LillyDirect Savings Program</div>
+            <div class="sc-details">
+              <div class="sc-row">
+                <span class="sc-key">With commercial insurance</span>
+                <span class="sc-val">As low as $25/month</span>
+              </div>
+              <div class="sc-row">
+                <span class="sc-key">Self-pay (no insurance)</span>
+                <span class="sc-val">~$549/month (Zepbound vials)</span>
+              </div>
+              <div class="sc-row">
+                <span class="sc-key">Not eligible</span>
+                <span class="sc-val">Medicare, Medicaid, federal programs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Savings cards are not available to people on Medicare, Medicaid, or other federal insurance programs. This is a federal anti-kickback rule, not a company decision.
+        </p>
+        <p>
+          Lilly's $549/month self-pay option (Zepbound vials through LillyDirect) is one of the most accessible cash-pay paths available for a branded GLP-1 as of 2026. It requires no insurance and ships directly.
+        </p>
+
+        <h2 id="insurance">Insurance</h2>
+        <p>
+          Insurance coverage for GLP-1 drugs for obesity is inconsistent and changing. Coverage for the diabetes-approved versions (Ozempic, Mounjaro) is more common than for the obesity-approved versions (Wegovy, Zepbound).
+        </p>
+
+        <div class="factor-list">
+          <div class="factor">
+            <div class="factor-label">Employer-sponsored plans</div>
+            <p>Coverage varies widely. Some plans cover Wegovy or Zepbound for obesity, others do not. Call the number on your insurance card and ask specifically whether your plan covers GLP-1 medications for weight management, and what the copay is under your specific formulary.</p>
+          </div>
+          <div class="factor">
+            <div class="factor-label">Medicare</div>
+            <p>Medicare Part D does not cover GLP-1 drugs for obesity alone. Coverage may apply if you have a qualifying diagnosis like type 2 diabetes or cardiovascular disease. The landscape here is evolving, so confirm current coverage with Medicare directly.</p>
+          </div>
+          <div class="factor">
+            <div class="factor-label">Medicaid</div>
+            <p>Medicaid coverage varies by state. Some states cover GLP-1 drugs; others do not. Contact your state Medicaid office or your prescriber's office, which typically handles prior authorization.</p>
+          </div>
+          <div class="factor">
+            <div class="factor-label">Prior authorization</div>
+            <p>Most insurance plans that do cover these drugs require prior authorization. Your doctor submits documentation showing you meet the criteria (typically BMI above a certain threshold, sometimes plus a comorbidity). This adds time but is a standard part of the coverage process.</p>
+          </div>
+        </div>
+
+        <h2 id="telehealth">Telehealth providers</h2>
+        <p>
+          Telehealth platforms can prescribe GLP-1 medications online, often with faster access than a traditional doctor's office. Most offer a bundled price that includes the consultation and medication.
+        </p>
+        <p>
+          Pricing through telehealth is often comparable to or slightly above what you would pay with a manufacturer savings card at a traditional pharmacy, but includes the convenience of an online visit and home delivery.
+        </p>
+        <p>
+          What to verify before signing up with a telehealth provider:
+        </p>
+        <ul>
+          <li>Whether they prescribe brand-name medications or compounded versions (see below)</li>
+          <li>Whether they accept your insurance</li>
+          <li>What the monthly subscription includes versus what is extra</li>
+          <li>Whether you can pause or cancel without penalty</li>
+        </ul>
+
+        <h2 id="compounded">Compounded semaglutide and tirzepatide</h2>
+
+        <div class="callout-warn-box">
+          <p class="callout-head">FDA shortage status changed in early 2025.</p>
+          <p>Semaglutide was removed from the FDA drug shortage list in February 2025. Tirzepatide followed shortly after. Large-scale compounding of these drugs by 503B outsourcing facilities is no longer permitted now that the shortage designation has ended. Some 503A pharmacies can still compound for individual patient-specific reasons, but broad commercial availability has narrowed significantly.</p>
+        </div>
+
+        <p>
+          Compounded semaglutide was widely available from telehealth providers in 2023 and 2024, often at significantly lower prices than brand-name Wegovy. The FDA shortage designation that allowed this ended in early 2025.
+        </p>
+        <p>
+          If a provider is currently offering compounded semaglutide or tirzepatide at scale, verify their regulatory compliance carefully. FDA-approved brand-name medications (Wegovy, Zepbound, Mounjaro, Ozempic) are the versions with the clinical trial data behind them.
+        </p>
+
+        <div class="cta-box" id="calculator">
+          <div class="cta-inner">
+            <div>
+              <p class="cta-title serif">See current prices side by side</p>
+              <p class="cta-sub">The cost comparison calculator shows GoodRx, savings card, and telehealth pricing for each drug, updated monthly.</p>
+            </div>
+            <a class="btn btn-p" href="/cost-comparison/">
+              Open calculator <span class="arr">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="source-footer">
+          <p class="source-label mono">Sources</p>
+          <p>Drug pricing: GoodRx and pharmacy list prices as of May 2026. Manufacturer savings program details: NovoCare and LillyDirect program terms as of May 2026. FDA shortage status: <a href="https://www.accessdata.fda.gov/scripts/drugshortages/" target="_blank" rel="noopener noreferrer">FDA Drug Shortages database ↗</a></p>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-head {
+    padding: 56px 0 40px;
+    border-bottom: 1px solid #E0DAD0;
+  }
+
+  .guide-layout {
+    padding: 64px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .toc {
+    position: sticky;
+    top: 88px;
+    font-size: 13px;
+  }
+
+  .toc h4 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6B655C;
+    margin-bottom: 14px;
+  }
+
+  .toc a {
+    display: block;
+    padding: 6px 0 6px 14px;
+    color: #3A352E;
+    border-left: 1px solid #E0DAD0;
+    margin-left: -15px;
+    transition: color 0.15s, border-color 0.15s;
+    font-size: 13px;
+  }
+
+  .toc a:hover { color: #3F5D52; border-left-color: #3F5D52; }
+
+  .guide-body { max-width: 680px; }
+
+  .price-intro p {
+    font-size: 16px;
+    color: #3A352E;
+    line-height: 1.65;
+    margin-bottom: 14px;
+    max-width: 65ch;
+  }
+
+  /* Tables */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 12px;
+    font-size: 14px;
+  }
+
+  .data-table thead th {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6B655C;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #E0DAD0;
+  }
+
+  .data-table tbody tr { border-bottom: 1px solid #EDE7DC; }
+  .data-table tbody tr:last-child { border-bottom: none; }
+  .data-table tbody td { padding: 12px 12px; color: #3A352E; }
+
+  .data-table td.num {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: #1A1815;
+    text-align: right;
+  }
+
+  .data-table td.muted { color: #6B655C; font-size: 13px; }
+
+  .table-note {
+    font-size: 12px;
+    color: #6B655C;
+    margin-bottom: 32px;
+  }
+
+  .table-note a { color: #3F5D52; border-bottom: 1px solid color-mix(in srgb, #3F5D52 30%, transparent); }
+
+  /* Savings cards */
+  .savings-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0 28px;
+  }
+
+  .savings-card {
+    background: #FBFAF7;
+    border: 1px solid #E0DAD0;
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+
+  .sc-maker {
+    font-weight: 600;
+    color: #1A1815;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .sc-drugs {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3F5D52;
+    margin-bottom: 8px;
+  }
+
+  .sc-program {
+    font-size: 12px;
+    color: #6B655C;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #EDE7DC;
+  }
+
+  .sc-details { display: flex; flex-direction: column; gap: 8px; }
+
+  .sc-row { display: flex; flex-direction: column; gap: 2px; }
+
+  .sc-key {
+    font-size: 11px;
+    color: #6B655C;
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .sc-val {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1A1815;
+  }
+
+  /* Factor list */
+  .factor-list {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 0 28px;
+  }
+
+  .factor {
+    padding: 18px 0;
+    border-bottom: 1px solid #EDE7DC;
+  }
+
+  .factor:last-child { border-bottom: none; }
+
+  .factor-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3F5D52;
+    margin-bottom: 6px;
+  }
+
+  .factor p {
+    margin: 0;
+    font-size: 15px;
+    color: #3A352E;
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+
+  /* Warning callout */
+  .callout-warn-box {
+    background: #FFF7E8;
+    border: 1px solid #E8C97A;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0 20px;
+  }
+
+  .callout-head {
+    font-weight: 600;
+    color: #1A1815;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .callout-warn-box p {
+    font-size: 14px;
+    color: #3A352E;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  /* CTA */
+  .cta-box {
+    background: #1A1815;
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin: 48px 0 40px;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .cta-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FBFAF7;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-sub {
+    font-size: 14px;
+    color: #9D968C;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 44ch;
+  }
+
+  .cta-box a.btn-p {
+    color: #FBFAF7;
+    border-bottom: none;
+    flex-shrink: 0;
+  }
+
+  .cta-box a.btn-p:hover { color: #FBFAF7; }
+
+  /* Source */
+  .source-footer {
+    padding-top: 32px;
+    border-top: 1px solid #E0DAD0;
+  }
+
+  .source-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6B655C;
+    margin-bottom: 8px;
+  }
+
+  .source-footer p {
+    font-size: 13px;
+    color: #6B655C;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .source-footer a {
+    color: #3F5D52;
+    border-bottom: 1px solid color-mix(in srgb, #3F5D52 30%, transparent);
+  }
+
+  @media (max-width: 980px) {
+    .guide-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { position: static; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 640px) {
+    .savings-cards { grid-template-columns: 1fr; }
+    .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 13px; }
+    .data-table thead th, .data-table tbody td { padding: 10px 8px; }
+    .cta-box { padding: 24px 20px; }
+    .page-head { padding: 40px 0 32px; }
+  }
+</style>

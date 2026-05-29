@@ -1,0 +1,586 @@
+---
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+---
+
+<BaseLayout
+  title="Mounjaro vs Wegovy: What the Clinical Trials Show | GLP Index"
+  description="Tirzepatide (Mounjaro/Zepbound) averaged 20.9% weight loss in SURMOUNT-1. Semaglutide 2.4mg (Wegovy) averaged 14.9% in STEP 1. Here is what those numbers actually mean and how to compare them honestly."
+>
+  <Header />
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">GLP Index</a>
+        <span class="sep">/</span>
+        <a href="/guides/">Guides</a>
+        <span class="sep">/</span>
+        <span class="now">Mounjaro vs Wegovy</span>
+      </div>
+      <div class="eyebrow" style="margin-bottom: 20px">Clinical comparison · tirzepatide vs semaglutide</div>
+      <h1 class="serif" style="font-weight:500;font-size:clamp(34px,4.5vw,56px);max-width:22ch">
+        Mounjaro vs Wegovy: what the <em>trials</em> actually show
+      </h1>
+      <p class="deck" style="margin-top:18px;max-width:58ch">
+        Two separate trials, two different drugs, six percentage points apart on average weight loss. Here is a straight read of the data and what it does and does not tell you.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="guide-layout">
+
+      <aside class="toc">
+        <h4>On this page</h4>
+        <a href="#side-by-side">Side by side</a>
+        <a href="#mechanism">How they differ</a>
+        <a href="#distribution">Result distribution</a>
+        <a href="#caveat">Why you can't compare directly</a>
+        <a href="#side-effects">Side effects</a>
+        <a href="#cost">Cost</a>
+        <a href="#calculator">Use the calculator</a>
+      </aside>
+
+      <article class="prose guide-body">
+
+        <div class="compare-cards" id="side-by-side">
+          <div class="compare-card">
+            <div class="cc-label mono">Wegovy · STEP 1 · 2021</div>
+            <div class="cc-drug serif">Semaglutide 2.4mg</div>
+            <div class="cc-stat serif">14.9%</div>
+            <div class="cc-meta">avg weight loss · 68 weeks · 1,961 participants</div>
+            <a class="cite" href="https://www.nejm.org/doi/10.1056/NEJMoa2032183" target="_blank" rel="noopener noreferrer">N Engl J Med 384:989 ↗</a>
+          </div>
+          <div class="compare-card compare-card-highlight">
+            <div class="cc-label mono">Mounjaro / Zepbound · SURMOUNT-1 · 2022</div>
+            <div class="cc-drug serif">Tirzepatide 15mg</div>
+            <div class="cc-stat serif">20.9%</div>
+            <div class="cc-meta">avg weight loss · 72 weeks · 2,539 participants</div>
+            <a class="cite" href="https://www.nejm.org/doi/10.1056/NEJMoa2206038" target="_blank" rel="noopener noreferrer">N Engl J Med 387:205 ↗</a>
+          </div>
+        </div>
+
+        <p>
+          Tirzepatide shows a higher average in its pivotal trial. That gap of about 6 percentage points is real and clinically meaningful. But the two trials were run separately, on overlapping but not identical populations, with different durations. Neither number is a guarantee for any individual.
+        </p>
+
+        <h2 id="mechanism">How the two drugs actually differ</h2>
+        <p>
+          Both drugs work primarily through appetite suppression and slowing how fast food leaves your stomach. The difference is in which receptors they target.
+        </p>
+
+        <div class="mechanism-grid">
+          <div class="mech-card">
+            <div class="mech-label mono">Semaglutide (Wegovy, Ozempic)</div>
+            <div class="mech-type">GLP-1 receptor agonist</div>
+            <p>Mimics glucagon-like peptide-1, a hormone released after eating. Reduces appetite by acting on receptors in the brain and gut. The active ingredient in both Wegovy (obesity dose) and Ozempic (diabetes dose).</p>
+          </div>
+          <div class="mech-card">
+            <div class="mech-label mono">Tirzepatide (Mounjaro, Zepbound)</div>
+            <div class="mech-type">Dual GIP + GLP-1 receptor agonist</div>
+            <p>Does everything semaglutide does, plus activates the GIP receptor (glucose-dependent insulinotropic polypeptide). The GIP component appears to act on fat tissue in ways that GLP-1 alone does not, which likely explains the additional weight loss seen in trials.</p>
+          </div>
+        </div>
+
+        <p>
+          Mounjaro and Zepbound are the same molecule (tirzepatide). Mounjaro is approved for type 2 diabetes. Zepbound is approved for obesity. Same drug, different brand name, different indication on the label.
+        </p>
+
+        <h2 id="distribution">How results distribute in each trial</h2>
+        <p>
+          The average does not tell the full story. Here is the responder breakdown for both trials at their highest doses.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Weight loss threshold</th>
+              <th>Wegovy (14.9% avg)</th>
+              <th>Tirzepatide 15mg (20.9% avg)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>5% or more</td>
+              <td class="num">86%</td>
+              <td class="num highlight">91%</td>
+            </tr>
+            <tr>
+              <td>10% or more</td>
+              <td class="num">69%</td>
+              <td class="num highlight">83%</td>
+            </tr>
+            <tr>
+              <td>15% or more</td>
+              <td class="num">50%</td>
+              <td class="num highlight">69%</td>
+            </tr>
+            <tr>
+              <td>20% or more</td>
+              <td class="num">32%</td>
+              <td class="num highlight">50%</td>
+            </tr>
+            <tr>
+              <td>25% or more</td>
+              <td class="num muted">not reported</td>
+              <td class="num highlight">36%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Half of people on the 15mg tirzepatide dose lost 20% or more. On Wegovy, that number was one in three. The floor is also higher: 91% of tirzepatide participants crossed the 5% threshold versus 86% on Wegovy.
+        </p>
+
+        <p>
+          Tirzepatide is also dosed in tiers. The 15mg is the highest dose, reached after a slow escalation over five months. The 10mg results are slightly lower at 19.5% average, and 5mg averaged 16.0%.
+        </p>
+
+        <h2 id="caveat">Why you cannot compare these numbers directly</h2>
+
+        <div class="callout-warn-box">
+          <p class="callout-head">These were not head-to-head trials.</p>
+          <p>STEP 1 and SURMOUNT-1 were run separately, by different research teams, for different companies. No randomized controlled trial has directly compared semaglutide 2.4mg and tirzepatide in the same population at the same time. The 6-point gap is real, but it is not the kind of controlled comparison that rules out confounding factors.</p>
+        </div>
+
+        <p>
+          A few specific differences between the trials that affect interpretation:
+        </p>
+
+        <div class="factor-list">
+          <div class="factor">
+            <div class="factor-label">Duration</div>
+            <p>SURMOUNT-1 ran 72 weeks. STEP 1 ran 68 weeks. Four extra weeks of treatment is not the full explanation for the gap, but it is a factor.</p>
+          </div>
+          <div class="factor">
+            <div class="factor-label">Population</div>
+            <p>Both trials required BMI of 30 or higher, or 27 or higher with a weight-related condition. STEP 1 excluded people with type 2 diabetes. SURMOUNT-1 also excluded people with diabetes in its primary cohort. The populations are similar but not identical in terms of baseline characteristics.</p>
+          </div>
+          <div class="factor">
+            <div class="factor-label">No published head-to-head trial yet</div>
+            <p>As of mid-2026, no peer-reviewed randomized trial has published a direct comparison of the two drugs in the same study population. Observational data and indirect meta-analyses exist, but they carry more uncertainty than a controlled trial.</p>
+          </div>
+        </div>
+
+        <p>
+          None of this changes the fact that tirzepatide shows higher averages in the available evidence. It just means you should read the gap as "tirzepatide probably leads to more weight loss for most people" rather than "tirzepatide is exactly 6 points better."
+        </p>
+
+        <h2 id="side-effects">Side effects</h2>
+        <p>
+          Both drugs share a similar side effect profile, since both act on GLP-1 receptors. The most common issues are gastrointestinal.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Side effect</th>
+              <th>Wegovy (STEP 1)</th>
+              <th>Tirzepatide (SURMOUNT-1)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nausea</td>
+              <td class="num">44%</td>
+              <td class="num">33%</td>
+            </tr>
+            <tr>
+              <td>Diarrhea</td>
+              <td class="num">30%</td>
+              <td class="num">23%</td>
+            </tr>
+            <tr>
+              <td>Vomiting</td>
+              <td class="num">24%</td>
+              <td class="num">13%</td>
+            </tr>
+            <tr>
+              <td>Constipation</td>
+              <td class="num">24%</td>
+              <td class="num">17%</td>
+            </tr>
+            <tr>
+              <td>Discontinued due to side effects</td>
+              <td class="num">7%</td>
+              <td class="num">7%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Tirzepatide shows lower rates on most GI side effects in its trial. Discontinuation rates were the same. These are trial-reported rates under controlled conditions and do not account for how side effects vary with dose escalation speed, food choices, and individual sensitivity.
+        </p>
+
+        <h2 id="cost">Cost</h2>
+        <p>
+          At list price, both drugs run over $1,000 per month without insurance or savings programs. Tirzepatide (Mounjaro/Zepbound) lists slightly lower than Wegovy, though actual cost depends heavily on insurance, savings cards, and how you access the medication.
+        </p>
+        <p>
+          The cost comparison calculator on this site breaks out cash price, GoodRx estimates, and manufacturer savings card pricing for each drug side by side, updated monthly.
+        </p>
+
+        <div class="cta-box" id="calculator">
+          <div class="cta-inner">
+            <div>
+              <p class="cta-title serif">Compare costs and timelines</p>
+              <p class="cta-sub">The weight loss calculator shows your projected timeline for each drug. The cost comparison breaks out what you would pay under each pricing path.</p>
+            </div>
+            <div class="cta-buttons">
+              <a class="btn btn-p" href="/weight-loss-timeline/">
+                Timeline <span class="arr">→</span>
+              </a>
+              <a class="btn btn-s-light" href="/cost-comparison/">
+                Cost comparison
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="source-footer">
+          <p class="source-label mono">Primary sources</p>
+          <p>Wilding JPH, et al. Once-Weekly Semaglutide in Adults with Overweight or Obesity. <em>N Engl J Med.</em> 2021;384:989-1002. <a href="https://www.nejm.org/doi/10.1056/NEJMoa2032183" target="_blank" rel="noopener noreferrer">doi:10.1056/NEJMoa2032183 ↗</a></p>
+          <p style="margin-top: 8px;">Jastreboff AM, et al. Tirzepatide Once Weekly for the Treatment of Obesity. <em>N Engl J Med.</em> 2022;387:205-216. <a href="https://www.nejm.org/doi/10.1056/NEJMoa2206038" target="_blank" rel="noopener noreferrer">doi:10.1056/NEJMoa2206038 ↗</a></p>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-head {
+    padding: 56px 0 40px;
+    border-bottom: 1px solid #E0DAD0;
+  }
+
+  .guide-layout {
+    padding: 64px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .toc {
+    position: sticky;
+    top: 88px;
+    font-size: 13px;
+  }
+
+  .toc h4 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6B655C;
+    margin-bottom: 14px;
+  }
+
+  .toc a {
+    display: block;
+    padding: 6px 0 6px 14px;
+    color: #3A352E;
+    border-left: 1px solid #E0DAD0;
+    margin-left: -15px;
+    transition: color 0.15s, border-color 0.15s;
+    font-size: 13px;
+  }
+
+  .toc a:hover { color: #3F5D52; border-left-color: #3F5D52; }
+
+  .guide-body { max-width: 680px; }
+
+  /* Compare cards */
+  .compare-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .compare-card {
+    background: #FBFAF7;
+    border: 1px solid #E0DAD0;
+    border-radius: 10px;
+    padding: 22px 24px;
+  }
+
+  .compare-card-highlight {
+    background: #E8EDE9;
+    border-color: color-mix(in srgb, #3F5D52 30%, #E0DAD0);
+  }
+
+  .cc-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6B655C;
+    margin-bottom: 6px;
+  }
+
+  .compare-card-highlight .cc-label { color: #3F5D52; }
+
+  .cc-drug {
+    font-family: "Fraunces", serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1A1815;
+    margin-bottom: 12px;
+  }
+
+  .cc-stat {
+    font-family: "Fraunces", serif;
+    font-size: 44px;
+    font-weight: 500;
+    color: #1A1815;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .cc-meta {
+    font-size: 12px;
+    color: #6B655C;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  /* Mechanism grid */
+  .mechanism-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0 28px;
+  }
+
+  .mech-card {
+    background: #FBFAF7;
+    border: 1px solid #E0DAD0;
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+
+  .mech-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6B655C;
+    margin-bottom: 4px;
+  }
+
+  .mech-type {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1A1815;
+    margin-bottom: 8px;
+  }
+
+  .mech-card p {
+    font-size: 13px;
+    color: #3A352E;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  /* Tables */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 28px;
+    font-size: 14px;
+  }
+
+  .data-table thead th {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6B655C;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #E0DAD0;
+  }
+
+  .data-table tbody tr { border-bottom: 1px solid #EDE7DC; }
+  .data-table tbody tr:last-child { border-bottom: none; }
+  .data-table tbody td { padding: 12px 12px; color: #3A352E; }
+
+  .data-table td.num {
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    color: #1A1815;
+    text-align: right;
+  }
+
+  .data-table td.highlight { color: #3F5D52; }
+  .data-table td.muted { color: #6B655C; font-size: 13px; font-weight: 400; }
+
+  /* Warning callout */
+  .callout-warn-box {
+    background: #FFF7E8;
+    border: 1px solid #E8C97A;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0 28px;
+  }
+
+  .callout-head {
+    font-weight: 600;
+    color: #1A1815;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .callout-warn-box p {
+    font-size: 14px;
+    color: #3A352E;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .callout-warn-box p + p { margin-top: 8px; }
+
+  /* Factor list */
+  .factor-list {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 0 28px;
+  }
+
+  .factor {
+    padding: 18px 0;
+    border-bottom: 1px solid #EDE7DC;
+  }
+
+  .factor:last-child { border-bottom: none; }
+
+  .factor-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3F5D52;
+    margin-bottom: 6px;
+  }
+
+  .factor p {
+    margin: 0;
+    font-size: 15px;
+    color: #3A352E;
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+
+  /* CTA */
+  .cta-box {
+    background: #1A1815;
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin: 48px 0 40px;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .cta-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #FBFAF7;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-sub {
+    font-size: 14px;
+    color: #9D968C;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 40ch;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .cta-box a.btn-p {
+    color: #FBFAF7;
+    border-bottom: none;
+  }
+
+  .btn-s-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #9D968C;
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+
+  .btn-s-light:hover { border-color: rgba(255,255,255,0.35); color: #FBFAF7; }
+
+  /* Source footer */
+  .source-footer {
+    padding-top: 32px;
+    border-top: 1px solid #E0DAD0;
+  }
+
+  .source-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6B655C;
+    margin-bottom: 8px;
+  }
+
+  .source-footer p {
+    font-size: 13px;
+    color: #6B655C;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .source-footer a {
+    color: #3F5D52;
+    border-bottom: 1px solid color-mix(in srgb, #3F5D52 30%, transparent);
+  }
+
+  @media (max-width: 980px) {
+    .guide-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { position: static; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+    .cta-buttons { flex-direction: row; }
+  }
+
+  @media (max-width: 640px) {
+    .compare-cards { grid-template-columns: 1fr; }
+    .mechanism-grid { grid-template-columns: 1fr; }
+    .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 13px; }
+    .data-table thead th, .data-table tbody td { padding: 10px 8px; }
+    .cc-stat { font-size: 36px; }
+    .cta-box { padding: 24px 20px; }
+    .cta-buttons { flex-direction: column; }
+    .page-head { padding: 40px 0 32px; }
+  }
+</style>

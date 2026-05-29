@@ -1,0 +1,193 @@
+---
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+
+const guides = [
+  {
+    href: "/guides/wegovy-weight-loss-results/",
+    drug: "Wegovy",
+    drugLabel: "semaglutide 2.4mg",
+    title: "How Much Weight Can You Lose on Wegovy?",
+    description: "The STEP 1 trial enrolled 1,961 people for 68 weeks. Average loss was 14.9% of body weight. Here is the full distribution, broken down by starting weight.",
+    stat: "14.9%",
+    statLabel: "avg. weight loss",
+    trial: "STEP 1 · 2021",
+  },
+  {
+    href: "/guides/mounjaro-vs-wegovy/",
+    drug: "Comparison",
+    drugLabel: "tirzepatide vs semaglutide",
+    title: "Mounjaro vs Wegovy: What the Clinical Trials Show",
+    description: "Tirzepatide averaged 20.9% weight loss in SURMOUNT-1. Semaglutide 2.4mg averaged 14.9% in STEP 1. A straight read of both trials, including why you cannot compare them directly.",
+    stat: "+6pp",
+    statLabel: "tirzepatide advantage",
+    trial: "STEP 1 + SURMOUNT-1",
+  },
+  {
+    href: "/guides/glp1-cost-guide/",
+    drug: "All drugs",
+    drugLabel: "pricing guide · 2026",
+    title: "How Much Do GLP-1 Drugs Actually Cost?",
+    description: "List price, GoodRx, manufacturer savings cards, insurance, and telehealth. Every pricing path for Wegovy, Zepbound, Mounjaro, and Ozempic, with what changed after the FDA shortage ended.",
+    stat: "$0",
+    statLabel: "min. with savings card",
+    trial: "Updated May 2026",
+  },
+];
+---
+
+<BaseLayout
+  title="GLP-1 Guides — Clinical Trial Data, Explained | GLP Index"
+  description="Plain-language guides built on published clinical trial data for Ozempic, Wegovy, Mounjaro, and Zepbound. Real numbers, real sources."
+>
+  <Header />
+
+  <section class="page-head">
+    <div class="wrap">
+      <div class="eyebrow" style="margin-bottom: 20px">Clinically grounded</div>
+      <h1 class="serif" style="font-weight:500;font-size:clamp(36px,5vw,58px)">
+        GLP-1 <em>guides</em>
+      </h1>
+      <p class="deck" style="margin-top:16px;font-size:17px;max-width:54ch">
+        Every number here traces to a published clinical trial. No estimates, no blending studies. Just what the data actually says.
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding-top: 56px; padding-bottom: 80px;">
+    <div class="guide-grid">
+      {guides.map((guide) => (
+        <a href={guide.href} class="guide-card">
+          <div class="gc-top">
+            <div class="gc-drug">
+              <span class="gc-name">{guide.drug}</span>
+              <span class="gc-formula">{guide.drugLabel}</span>
+            </div>
+            <span class="gc-trial mono">{guide.trial}</span>
+          </div>
+          <div class="gc-stat serif">{guide.stat}<span class="gc-stat-label">{guide.statLabel}</span></div>
+          <h2 class="gc-title">{guide.title}</h2>
+          <p class="gc-desc">{guide.description}</p>
+          <span class="gc-link">Read guide <span class="arr">→</span></span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-head {
+    padding: 56px 0 48px;
+    border-bottom: 1px solid #E0DAD0;
+  }
+
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .guide-card {
+    display: block;
+    background: #FBFAF7;
+    border: 1px solid #E0DAD0;
+    border-radius: 10px;
+    padding: 28px 28px 24px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .guide-card:hover {
+    border-color: #3F5D52;
+    box-shadow: 0 4px 16px rgba(63, 93, 82, 0.08);
+  }
+
+  .gc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .gc-drug {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .gc-name {
+    font-family: "Fraunces", serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #3F5D52;
+    letter-spacing: -0.01em;
+  }
+
+  .gc-formula {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: #6B655C;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .gc-trial {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: #6B655C;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .gc-stat {
+    font-family: "Fraunces", serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: #1A1815;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .gc-stat-label {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #6B655C;
+    letter-spacing: 0;
+  }
+
+  .gc-title {
+    font-family: "Fraunces", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1A1815;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .gc-desc {
+    font-size: 14px;
+    color: #6B655C;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .gc-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #3F5D52;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .gc-link .arr { transition: transform 0.15s; }
+  .guide-card:hover .arr { transform: translateX(3px); }
+</style>
