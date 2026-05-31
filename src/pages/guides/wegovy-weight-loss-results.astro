@@ -334,7 +334,7 @@ import Footer from "../../components/layout/Footer.astro";
   .toc a:hover { color: #3F5D52; border-left-color: #3F5D52; }
 
   /* Article body */
-  .guide-body { max-width: 680px; }
+  .guide-body { max-width: 680px; min-width: 0; }
 
   /* Fact card */
   .fact-card {
@@ -563,6 +563,7 @@ import Footer from "../../components/layout/Footer.astro";
   }
 
   @media (max-width: 640px) {
+    .guide-layout { padding: 40px 0; }
     .data-table {
       display: block;
       overflow-x: auto;
@@ -570,8 +571,13 @@ import Footer from "../../components/layout/Footer.astro";
       font-size: 13px;
     }
     .data-table thead th, .data-table tbody td { padding: 10px 8px; }
-    .fc-big { font-size: 40px; }
-    .cta-box { padding: 24px 20px; }
-    .page-head { padding: 40px 0 32px; }
+    .fact-card { padding: 18px 16px; }
+    .fc-top { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .fc-big { font-size: 36px; }
+    .fc-stat { flex-direction: column; gap: 8px; }
+    .fc-meta { gap: 6px 12px; }
+    .cta-box { padding: 20px 16px; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+    .page-head { padding: 32px 0 24px; }
   }
 </style>
