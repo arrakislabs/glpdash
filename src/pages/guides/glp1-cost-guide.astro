@@ -293,7 +293,7 @@ import Footer from "../../components/layout/Footer.astro";
 
   .toc a:hover { color: #3F5D52; border-left-color: #3F5D52; }
 
-  .guide-body { max-width: 680px; }
+  .guide-body { max-width: 680px; min-width: 0; }
 
   .price-intro p {
     font-size: 16px;
@@ -528,10 +528,13 @@ import Footer from "../../components/layout/Footer.astro";
   }
 
   @media (max-width: 640px) {
+    .guide-layout { padding: 40px 0; }
     .savings-cards { grid-template-columns: 1fr; }
     .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 13px; }
     .data-table thead th, .data-table tbody td { padding: 10px 8px; }
-    .cta-box { padding: 24px 20px; }
-    .page-head { padding: 40px 0 32px; }
+    .cta-box { padding: 20px 16px; }
+    .cta-inner { flex-direction: column; align-items: flex-start; }
+    .callout-warn-box { padding: 16px 18px; }
+    .page-head { padding: 32px 0 24px; }
   }
 </style>
