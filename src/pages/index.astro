@@ -2,6 +2,8 @@
 import BaseLayout from "../components/layout/BaseLayout.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
+import ProviderBar from "../components/ProviderBar.astro";
+import ProviderCards from "../components/ProviderCards.astro";
 ---
 
 <BaseLayout
@@ -9,6 +11,7 @@ import Footer from "../components/layout/Footer.astro";
   description="Independent calculators for Ozempic, Wegovy, Wegovy HD, Mounjaro, and Zepbound. Weight loss projections, real costs, and dose schedules built on the published clinical-trial data your doctor reads."
 >
   <Header />
+  <ProviderBar />
 
   <main>
     <!-- Hero -->
@@ -168,6 +171,8 @@ import Footer from "../components/layout/Footer.astro";
       </div>
     </section>
   </main>
+
+  <ProviderCards />
 
   <Footer />
 </BaseLayout>

@@ -3,6 +3,8 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import WeightLossCalculator from "../components/calculators/WeightLossCalculator";
+import ProviderBar from "../components/ProviderBar.astro";
+import ProviderCards from "../components/ProviderCards.astro";
 ---
 
 <BaseLayout
@@ -10,6 +12,7 @@ import WeightLossCalculator from "../components/calculators/WeightLossCalculator
   description="Project your weight loss week-by-week on Wegovy, Wegovy HD, Ozempic, Mounjaro, or Zepbound — from the actual STEP and SURMOUNT trial curves."
 >
   <Header />
+  <ProviderBar />
 
   <section class="page-head">
     <div class="wrap">
@@ -30,6 +33,8 @@ import WeightLossCalculator from "../components/calculators/WeightLossCalculator
   <div class="wrap" style="padding-bottom:80px">
     <WeightLossCalculator client:load />
   </div>
+
+  <ProviderCards />
 
   <Footer />
 </BaseLayout>

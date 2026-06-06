@@ -1,0 +1,137 @@
+---
+interface GuideRef {
+  href: string;
+  title: string;
+  description: string;
+  stat: string;
+  statLabel: string;
+  drug: string;
+  drugLabel: string;
+}
+
+interface Props {
+  guides: GuideRef[];
+}
+
+const { guides } = Astro.props;
+---
+
+<div class="related-guides">
+  <p class="related-label mono">More guides</p>
+  <div class="related-grid">
+    {guides.map((guide) => (
+      <a href={guide.href} class="related-card">
+        <div class="rc-top">
+          <span class="rc-name serif">{guide.drug}</span>
+          <span class="rc-formula mono">{guide.drugLabel}</span>
+        </div>
+        <div class="rc-stat serif">{guide.stat}<span class="rc-stat-label">{guide.statLabel}</span></div>
+        <p class="rc-title">{guide.title}</p>
+        <span class="rc-link">Read guide <span class="arr">→</span></span>
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .related-guides {
+    margin: 48px 0 40px;
+    padding-top: 40px;
+    border-top: 1px solid #E0DAD0;
+  }
+
+  .related-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6B655C;
+    margin-bottom: 16px;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .related-card {
+    display: block;
+    background: #FBFAF7;
+    border: 1px solid #E0DAD0;
+    border-radius: 10px;
+    padding: 22px 22px 18px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .related-card:hover {
+    border-color: #3F5D52;
+    box-shadow: 0 4px 16px rgba(63, 93, 82, 0.08);
+  }
+
+  .rc-top {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 14px;
+  }
+
+  .rc-name {
+    font-family: "Fraunces", serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3F5D52;
+  }
+
+  .rc-formula {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: #6B655C;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .rc-stat {
+    font-family: "Fraunces", serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #1A1815;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .rc-stat-label {
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #6B655C;
+    letter-spacing: 0;
+  }
+
+  .rc-title {
+    font-size: 14px;
+    color: #3A352E;
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  .rc-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: #3F5D52;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .rc-link .arr { transition: transform 0.15s; }
+  .related-card:hover .arr { transform: translateX(3px); }
+
+  @media (max-width: 640px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+</style>

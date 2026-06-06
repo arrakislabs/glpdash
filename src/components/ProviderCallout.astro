@@ -1,0 +1,73 @@
+---
+// Compact sidebar callout — used in guide page TOC column
+// Swap href to affiliate link once approved
+---
+
+<div class="provider-sidebar">
+  <p class="ps-label mono">Find a provider</p>
+  <p class="ps-text">Several licensed telehealth services offer GLP-1 prescriptions online.</p>
+  <a href="/cost-comparison/" class="ps-btn">
+    See if you qualify <span class="arr">→</span>
+  </a>
+  <a href="/cost-comparison/" class="ps-link">Check pricing</a>
+</div>
+
+<style>
+  .provider-sidebar {
+    margin-top: 32px;
+    padding: 18px 16px;
+    background: #E8EDE9;
+    border: 1px solid color-mix(in srgb, #3F5D52 25%, #E0DAD0);
+    border-radius: 10px;
+  }
+
+  .ps-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3F5D52;
+    margin-bottom: 8px;
+  }
+
+  .ps-text {
+    font-size: 13px;
+    color: #3A352E;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .ps-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding: 9px 12px;
+    background: #1A1815;
+    color: #FBFAF7;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s;
+    margin-bottom: 10px;
+  }
+
+  .ps-btn:hover { background: #3F5D52; }
+  .ps-btn .arr { transition: transform 0.15s; }
+  .ps-btn:hover .arr { transform: translateX(3px); }
+
+  .ps-link {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #3F5D52;
+    font-weight: 500;
+    border-bottom: 1px solid color-mix(in srgb, #3F5D52 30%, transparent);
+    padding-bottom: 1px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .ps-link:hover { color: #1A1815; }
+</style>
