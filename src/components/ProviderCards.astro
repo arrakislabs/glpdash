@@ -52,6 +52,11 @@ const providers = [
     href: "/cost-comparison/",
   },
 ];
+
+const partnerSlot = {
+  href: "mailto:hello@glpdash.com",
+};
+
 ---
 
 <section class="provider-cards-section">
@@ -103,6 +108,15 @@ const providers = [
           <p class="pc-fine">No commitment · Cancel anytime</p>
         </div>
       ))}
+
+      <a href={partnerSlot.href} class="provider-card provider-card--slot">
+        <div class="slot-inner">
+          <span class="slot-badge mono">Open slot</span>
+          <p class="slot-heading serif">Your brand here</p>
+          <p class="slot-body">Reach high-intent GLP-1 audiences — people actively comparing medications and looking for a prescriber.</p>
+          <span class="slot-cta">Partner with us <span class="arr">→</span></span>
+        </div>
+      </a>
     </div>
 
     <p class="pc-disclaimer">
@@ -153,7 +167,7 @@ const providers = [
   /* Grid */
   .pc-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     align-items: start;
   }
@@ -352,6 +366,73 @@ const providers = [
     text-align: center;
   }
 
+  /* "Your brand here" slot card */
+  .provider-card--slot {
+    border: 2px dashed #C8C0B4;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .provider-card--slot:hover {
+    border-color: #3F5D52;
+    background: #F3F7F4;
+  }
+
+  .slot-inner {
+    text-align: center;
+    padding: 8px;
+  }
+
+  .slot-badge {
+    display: inline-block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9D968C;
+    border: 1px dashed #C8C0B4;
+    border-radius: 100px;
+    padding: 3px 10px;
+    margin-bottom: 16px;
+  }
+
+  .slot-heading {
+    font-family: "Fraunces", serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #9D968C;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .provider-card--slot:hover .slot-heading { color: #3F5D52; }
+
+  .slot-body {
+    font-size: 13px;
+    color: #B0A89E;
+    line-height: 1.5;
+    max-width: 22ch;
+    margin: 0 auto 20px;
+  }
+
+  .slot-cta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #9D968C;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.15s;
+  }
+
+  .provider-card--slot:hover .slot-cta { color: #3F5D52; }
+  .slot-cta .arr { transition: transform 0.15s; }
+  .provider-card--slot:hover .slot-cta .arr { transform: translateX(3px); }
+
   /* Disclaimer */
   .pc-disclaimer {
     margin-top: 28px;
@@ -363,13 +444,20 @@ const providers = [
     margin-inline: auto;
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 1060px) {
     .pc-grid {
-      grid-template-columns: 1fr;
-      max-width: 440px;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 700px;
       margin-inline: auto;
     }
 
     .provider-card--featured { transform: none; }
+  }
+
+  @media (max-width: 640px) {
+    .pc-grid {
+      grid-template-columns: 1fr;
+      max-width: 440px;
+    }
   }
 </style>
