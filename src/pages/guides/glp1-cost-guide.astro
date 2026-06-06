@@ -4,6 +4,8 @@ import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
 import RelatedGuides from "../../components/RelatedGuides.astro";
 import ProviderCallout from "../../components/ProviderCallout.astro";
+import ProviderBar from "../../components/ProviderBar.astro";
+import ProviderCards from "../../components/ProviderCards.astro";
 ---
 
 <BaseLayout
@@ -12,6 +14,7 @@ import ProviderCallout from "../../components/ProviderCallout.astro";
   ogImage="/og-glp1-cost-guide.png"
 >
   <Header />
+  <ProviderBar />
 
   <section class="page-head">
     <div class="wrap">
@@ -270,6 +273,8 @@ import ProviderCallout from "../../components/ProviderCallout.astro";
       </article>
     </div>
   </div>
+
+  <ProviderCards />
 
   <Footer />
 </BaseLayout>

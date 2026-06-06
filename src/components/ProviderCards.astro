@@ -1,0 +1,375 @@
+---
+// Provider comparison cards — affiliate placement
+// Swap hrefs and update provider details once affiliate links are approved
+
+const providers = [
+  {
+    name: "Ro",
+    tagline: "GLP-1 prescriptions online, nationwide",
+    badge: "Most Popular",
+    featured: true,
+    price: "99",
+    priceNote: "per month",
+    drugs: ["Wegovy", "Ozempic", "Compounded"],
+    features: [
+      "Insurance billing accepted",
+      "Same-week prescription starts",
+      "Dedicated care team included",
+    ],
+    cta: "Get Started",
+    href: "/cost-comparison/",
+  },
+  {
+    name: "Found",
+    tagline: "Personalized weight care + GLP-1 access",
+    badge: "Best Value",
+    featured: false,
+    price: "149",
+    priceNote: "per month",
+    drugs: ["Wegovy", "Zepbound", "Mounjaro"],
+    features: [
+      "Board-certified prescribers",
+      "Nutrition + behavior coaching",
+      "Ships to 48 states",
+    ],
+    cta: "Get Started",
+    href: "/cost-comparison/",
+  },
+  {
+    name: "Hims & Hers",
+    tagline: "Affordable GLP-1 options online",
+    badge: null,
+    featured: false,
+    price: "179",
+    priceNote: "per month",
+    drugs: ["Compounded sema.", "Wegovy (select)"],
+    features: [
+      "Async & video consults",
+      "Fast online qualification",
+      "Cancel anytime",
+    ],
+    cta: "Check Pricing",
+    href: "/cost-comparison/",
+  },
+];
+---
+
+<section class="provider-cards-section">
+  <div class="wrap">
+    <div class="pc-header">
+      <p class="pc-eyebrow mono">Find an online provider</p>
+      <h2 class="pc-heading serif">Compare GLP-1 telehealth options</h2>
+      <p class="pc-subhead">Licensed providers who offer online consultations and GLP-1 prescriptions. Check availability in your state.</p>
+    </div>
+
+    <div class="pc-grid">
+      {providers.map((provider) => (
+        <div class={`provider-card${provider.featured ? " provider-card--featured" : ""}`}>
+          <div class="pc-card-top">
+            {provider.badge && (
+              <span class={`pc-badge${provider.featured ? " pc-badge--featured" : ""}`}>
+                {provider.badge}
+              </span>
+            )}
+            {!provider.badge && <span class="pc-badge-spacer" />}
+            <h3 class="pc-name serif">{provider.name}</h3>
+            <p class="pc-tagline">{provider.tagline}</p>
+          </div>
+
+          <div class="pc-price-row">
+            <span class="pc-from">From</span>
+            <span class="pc-price serif">${provider.price}</span>
+            <span class="pc-price-note">/{provider.priceNote}</span>
+          </div>
+
+          <div class="pc-drugs">
+            {provider.drugs.map((drug) => (
+              <span class="pc-drug-chip">{drug}</span>
+            ))}
+          </div>
+
+          <ul class="pc-features">
+            {provider.features.map((feature) => (
+              <li>
+                <span class="pc-check" aria-hidden="true">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <a href={provider.href} class={`pc-cta${provider.featured ? " pc-cta--featured" : ""}`}>
+            {provider.cta} <span class="arr">→</span>
+          </a>
+          <p class="pc-fine">No commitment · Cancel anytime</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="pc-disclaimer">
+      GLP Index may earn a commission if you sign up through these links, at no extra cost to you. Provider details are updated regularly but confirm availability with each provider directly.
+    </p>
+  </div>
+</section>
+
+<style>
+  .provider-cards-section {
+    background: #F7F4EF;
+    border-top: 1px solid #E0DAD0;
+    border-bottom: 1px solid #E0DAD0;
+    padding: 56px 0 48px;
+  }
+
+  .pc-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .pc-eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3F5D52;
+    margin-bottom: 10px;
+  }
+
+  .pc-heading {
+    font-family: "Fraunces", serif;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 500;
+    color: #1A1815;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .pc-subhead {
+    font-size: 15px;
+    color: #6B655C;
+    max-width: 52ch;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+
+  /* Grid */
+  .pc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  /* Card */
+  .provider-card {
+    background: #FBFAF7;
+    border: 1px solid #E0DAD0;
+    border-radius: 12px;
+    padding: 24px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .provider-card--featured {
+    background: #1A1815;
+    border-color: #1A1815;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 32px rgba(26, 24, 21, 0.18);
+  }
+
+  .pc-card-top { margin-bottom: 20px; }
+
+  /* Badge */
+  .pc-badge {
+    display: inline-block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: #E8EDE9;
+    color: #3F5D52;
+    margin-bottom: 14px;
+  }
+
+  .pc-badge--featured {
+    background: #3F5D52;
+    color: #FBFAF7;
+  }
+
+  .pc-badge-spacer {
+    display: block;
+    height: 22px;
+    margin-bottom: 14px;
+  }
+
+  .pc-name {
+    font-family: "Fraunces", serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #1A1815;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .provider-card--featured .pc-name { color: #FBFAF7; }
+
+  .pc-tagline {
+    font-size: 13px;
+    color: #6B655C;
+    line-height: 1.4;
+  }
+
+  .provider-card--featured .pc-tagline { color: #9D968C; }
+
+  /* Price */
+  .pc-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E0DAD0;
+  }
+
+  .provider-card--featured .pc-price-row { border-bottom-color: #3A352E; }
+
+  .pc-from {
+    font-size: 13px;
+    color: #6B655C;
+  }
+
+  .provider-card--featured .pc-from { color: #9D968C; }
+
+  .pc-price {
+    font-family: "Fraunces", serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #1A1815;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .provider-card--featured .pc-price { color: #FBFAF7; }
+
+  .pc-price-note {
+    font-size: 13px;
+    color: #6B655C;
+  }
+
+  .provider-card--featured .pc-price-note { color: #9D968C; }
+
+  /* Drug chips */
+  .pc-drugs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .pc-drug-chip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #F3F0EB;
+    color: #6B655C;
+    border: 1px solid #E0DAD0;
+  }
+
+  .provider-card--featured .pc-drug-chip {
+    background: #2A2520;
+    border-color: #3A352E;
+    color: #9D968C;
+  }
+
+  /* Features */
+  .pc-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+
+  .pc-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: #3A352E;
+    line-height: 1.4;
+  }
+
+  .provider-card--featured .pc-features li { color: #C8C0B4; }
+
+  .pc-check {
+    color: #3F5D52;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .provider-card--featured .pc-check { color: #5A8A78; }
+
+  /* CTA */
+  .pc-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s, border-color 0.15s;
+    background: #3F5D52;
+    color: #FBFAF7;
+    margin-bottom: 10px;
+  }
+
+  .pc-cta:hover { background: #2A3F38; }
+
+  .pc-cta--featured {
+    background: #FBFAF7;
+    color: #1A1815;
+  }
+
+  .pc-cta--featured:hover { background: #E8EDE9; }
+
+  .pc-cta .arr { transition: transform 0.15s; }
+  .pc-cta:hover .arr { transform: translateX(3px); }
+
+  .pc-fine {
+    font-size: 11px;
+    color: #9D968C;
+    text-align: center;
+  }
+
+  /* Disclaimer */
+  .pc-disclaimer {
+    margin-top: 28px;
+    font-size: 12px;
+    color: #9D968C;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 72ch;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 860px) {
+    .pc-grid {
+      grid-template-columns: 1fr;
+      max-width: 440px;
+      margin-inline: auto;
+    }
+
+    .provider-card--featured { transform: none; }
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+// Slim affiliate bar — sits between Header and page content
+// Swap hrefs to affiliate links once approved
+---
+
+<div class="provider-bar">
+  <div class="wrap">
+    <div class="pb-inner">
+      <span class="pb-label">Find a GLP-1 provider online:</span>
+      <div class="pb-providers">
+        <a href="/cost-comparison/" class="pb-chip">Ro</a>
+        <a href="/cost-comparison/" class="pb-chip">Found</a>
+        <a href="/cost-comparison/" class="pb-chip">Hims &amp; Hers</a>
+      </div>
+      <a href="/cost-comparison/" class="pb-cta">
+        Compare all options <span class="arr">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .provider-bar {
+    background: #FFFEFB;
+    border-bottom: 1px solid #E0DAD0;
+    padding: 10px 0;
+  }
+
+  .pb-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .pb-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6B655C;
+    white-space: nowrap;
+  }
+
+  .pb-providers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .pb-chip {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1A1815;
+    background: #F3F0EB;
+    border: 1px solid #E0DAD0;
+    border-radius: 100px;
+    padding: 3px 12px;
+    transition: border-color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+
+  .pb-chip:hover {
+    border-color: #3F5D52;
+    background: #E8EDE9;
+    color: #3F5D52;
+  }
+
+  .pb-cta {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3F5D52;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.15s;
+  }
+
+  .pb-cta:hover { color: #1A1815; }
+  .pb-cta .arr { transition: transform 0.15s; }
+  .pb-cta:hover .arr { transform: translateX(3px); }
+
+  @media (max-width: 640px) {
+    .pb-label { display: none; }
+    .pb-cta { margin-left: 0; }
+  }
+</style>
