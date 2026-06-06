@@ -2,6 +2,8 @@
 import BaseLayout from "../../components/layout/BaseLayout.astro";
 import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
+import RelatedGuides from "../../components/RelatedGuides.astro";
+import ProviderCallout from "../../components/ProviderCallout.astro";
 ---
 
 <BaseLayout
@@ -42,6 +44,7 @@ import Footer from "../../components/layout/Footer.astro";
         <a href="#side-effects">Side effects</a>
         <a href="#cost">Cost</a>
         <a href="#calculator">Use the calculator</a>
+        <ProviderCallout variant="sidebar" />
       </aside>
 
       <article class="prose guide-body">
@@ -239,6 +242,25 @@ import Footer from "../../components/layout/Footer.astro";
             </div>
           </div>
         </div>
+
+        <RelatedGuides guides={[
+          {
+            href: "/guides/wegovy-weight-loss-results/",
+            drug: "Wegovy",
+            drugLabel: "semaglutide 2.4mg",
+            title: "How Much Weight Can You Lose on Wegovy?",
+            stat: "14.9%",
+            statLabel: "avg. weight loss",
+          },
+          {
+            href: "/guides/glp1-cost-guide/",
+            drug: "All drugs",
+            drugLabel: "pricing guide · 2026",
+            title: "How Much Do GLP-1 Drugs Actually Cost?",
+            stat: "$0",
+            statLabel: "min. with savings card",
+          },
+        ]} />
 
         <div class="source-footer">
           <p class="source-label mono">Primary sources</p>

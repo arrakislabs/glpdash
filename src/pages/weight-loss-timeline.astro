@@ -3,6 +3,7 @@ import BaseLayout from "../components/layout/BaseLayout.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import WeightLossCalculator from "../components/calculators/WeightLossCalculator";
+import ProviderCallout from "../components/ProviderCallout.astro";
 ---
 
 <BaseLayout
@@ -30,6 +31,8 @@ import WeightLossCalculator from "../components/calculators/WeightLossCalculator
   <div class="wrap" style="padding-bottom:80px">
     <WeightLossCalculator client:load />
   </div>
+
+  <ProviderCallout variant="section" />
 
   <Footer />
 </BaseLayout>

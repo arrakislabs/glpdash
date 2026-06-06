@@ -2,6 +2,8 @@
 import BaseLayout from "../../components/layout/BaseLayout.astro";
 import Header from "../../components/layout/Header.astro";
 import Footer from "../../components/layout/Footer.astro";
+import RelatedGuides from "../../components/RelatedGuides.astro";
+import ProviderCallout from "../../components/ProviderCallout.astro";
 ---
 
 <BaseLayout
@@ -62,6 +64,7 @@ import Footer from "../../components/layout/Footer.astro";
         <a href="#why-it-varies">Why results vary</a>
         <a href="#vs-others">vs. other drugs</a>
         <a href="#calculator">Use the calculator</a>
+        <ProviderCallout variant="sidebar" />
       </aside>
 
       <article class="prose guide-body">
@@ -264,7 +267,7 @@ import Footer from "../../components/layout/Footer.astro";
           Ozempic is primarily a diabetes medication, so the STEP 2 population is different and not a direct comparison. Wegovy HD and the tirzepatide drugs (Mounjaro/Zepbound) show higher averages in their respective trials. The mechanisms differ, which is why tirzepatide can produce different outcomes than semaglutide at any dose.
         </p>
         <p>
-          If you and your doctor are weighing options and maximum weight loss is the goal, those trials are worth reviewing. The comparison calculator on this site lays out the cost side of that decision.
+          If you and your doctor are weighing options and maximum weight loss is the goal, those trials are worth reviewing — the <a href="/guides/mounjaro-vs-wegovy/">Mounjaro vs Wegovy guide</a> on this site walks through both side by side.
         </p>
 
         <div class="cta-box" id="calculator">
@@ -278,6 +281,25 @@ import Footer from "../../components/layout/Footer.astro";
             </a>
           </div>
         </div>
+
+        <RelatedGuides guides={[
+          {
+            href: "/guides/mounjaro-vs-wegovy/",
+            drug: "Comparison",
+            drugLabel: "tirzepatide vs semaglutide",
+            title: "Mounjaro vs Wegovy: What the Clinical Trials Show",
+            stat: "+6pp",
+            statLabel: "tirzepatide advantage",
+          },
+          {
+            href: "/guides/glp1-cost-guide/",
+            drug: "All drugs",
+            drugLabel: "pricing guide · 2026",
+            title: "How Much Do GLP-1 Drugs Actually Cost?",
+            stat: "$0",
+            statLabel: "min. with savings card",
+          },
+        ]} />
 
         <div class="source-footer">
           <p class="source-label mono">Primary source</p>

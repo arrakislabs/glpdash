@@ -1,0 +1,167 @@
+---
+interface Props {
+  variant?: "sidebar" | "section";
+}
+
+const { variant = "sidebar" } = Astro.props;
+---
+
+{variant === "sidebar" && (
+  <div class="provider-sidebar">
+    <p class="ps-label mono">Find a provider</p>
+    <p class="ps-text">Several licensed telehealth services offer online GLP-1 prescriptions.</p>
+    <a href="/cost-comparison/" class="ps-btn">
+      See if you qualify <span class="arr">→</span>
+    </a>
+    <a href="/cost-comparison/" class="ps-link">
+      Check pricing
+    </a>
+  </div>
+)}
+
+{variant === "section" && (
+  <section class="provider-section">
+    <div class="wrap">
+      <div class="ps-inner">
+        <div class="ps-copy">
+          <p class="ps-eyebrow mono">Find an online provider</p>
+          <h2 class="ps-heading serif">Ready to start a GLP-1 medication?</h2>
+          <p class="ps-body">Several licensed telehealth providers offer online consultations and GLP-1 prescriptions. Compare options and check if you qualify — without leaving home.</p>
+        </div>
+        <div class="ps-actions">
+          <a href="/cost-comparison/" class="btn btn-p">
+            Check pricing →
+          </a>
+          <a href="/cost-comparison/" class="btn btn-s-light">
+            See if you qualify
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  /* ── Sidebar variant ── */
+  .provider-sidebar {
+    margin-top: 32px;
+    padding: 18px 16px;
+    background: #E8EDE9;
+    border: 1px solid color-mix(in srgb, #3F5D52 25%, #E0DAD0);
+    border-radius: 10px;
+  }
+
+  .ps-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3F5D52;
+    margin-bottom: 8px;
+  }
+
+  .ps-text {
+    font-size: 13px;
+    color: #3A352E;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .ps-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding: 9px 12px;
+    background: #1A1815;
+    color: #FBFAF7;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .ps-btn:hover { background: #3F5D52; }
+  .ps-btn .arr { transition: transform 0.15s; }
+  .ps-btn:hover .arr { transform: translateX(3px); }
+
+  .ps-link {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #3F5D52;
+    font-weight: 500;
+    border-bottom: 1px solid color-mix(in srgb, #3F5D52 30%, transparent);
+    padding-bottom: 1px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .ps-link:hover { color: #1A1815; }
+
+  /* ── Section variant ── */
+  .provider-section {
+    background: #E8EDE9;
+    border-top: 1px solid color-mix(in srgb, #3F5D52 20%, #E0DAD0);
+    border-bottom: 1px solid color-mix(in srgb, #3F5D52 20%, #E0DAD0);
+    padding: 56px 0;
+  }
+
+  .ps-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .ps-copy { max-width: 52ch; }
+
+  .ps-eyebrow {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3F5D52;
+    margin-bottom: 12px;
+  }
+
+  .ps-heading {
+    font-family: "Fraunces", serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 500;
+    color: #1A1815;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .ps-body {
+    font-size: 16px;
+    color: #3A352E;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ps-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .ps-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .ps-actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+</style>
