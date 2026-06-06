@@ -380,8 +380,15 @@ import Footer from "../components/layout/Footer.astro";
   @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; gap: 36px; }
     .tools-grid { grid-template-columns: 1fr; }
-    .sources-grid { grid-template-columns: 1fr 1fr 1fr; }
+    .sources-grid { grid-template-columns: 1fr 1fr; }
     .trust-grid { grid-template-columns: 1fr; padding: 32px 24px; }
+  }
+
+  @media (max-width: 640px) {
+    .hero-grid { gap: 24px; }
+    .factcard { padding: 18px; }
+    .sources-grid { grid-template-columns: 1fr; }
+    .cta-row { flex-direction: column; align-items: flex-start; gap: 10px; }
   }
 </style>
 
