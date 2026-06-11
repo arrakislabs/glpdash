@@ -46,6 +46,7 @@ const resolvedOgImage = ogImage.startsWith("http") ? ogImage : `https://glpdash.
       window.plausible.init=window.plausible.init||function(i){window.plausible.o=i||{}};
       window.plausible.init();
     </script>
+    <slot name="head" />
   </head>
   <body>
     <slot />
